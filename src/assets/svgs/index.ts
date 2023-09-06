@@ -1,0 +1,1 @@
+export { default as Default_image } from './Default_image';
