@@ -1,0 +1,6 @@
+export { default as Logo } from './Logo'
+export { default as Search } from './Search'
+export { default as Chat } from './Chat'
+export { default as Chat_filled} from './Chat_filled'
+export { default as Arrow_up } from './Arrow_up'
+export { default as Arrow_down } from './Arrow_down'
