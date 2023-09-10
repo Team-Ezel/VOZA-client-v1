@@ -1,10 +1,10 @@
 export type RecommendClassItemType = {
   id: number
   title: string
-  leader: string
-  member: number
+  introduction: string
+  thumbnail:string
 }
 
 export type RecommendClassListType = {
-    RecommendClassList:RecommendClassItemType[]
+  RecommendClassList: RecommendClassItemType[]
 }
