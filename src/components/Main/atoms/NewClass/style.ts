@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 export const NewClassWrapper = styled.div`
+  cursor: pointer;
   background-color: #fff;
   border-radius: 15px;
   height: 30vh;
@@ -8,6 +9,9 @@ export const NewClassWrapper = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
+  :hover{
+    transform: translateY(-1%);
+  }
   svg {
     width: 86%;
   }
@@ -15,6 +19,7 @@ export const NewClassWrapper = styled.div`
     font-weight: 500;
     font-size: 20px;
   }
+
 `
 
 export const InformationWrapper = styled.div`

@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
 
 export const MyClassItemWrapper = styled.div`
+  cursor: pointer;
   background-color: #fff;
   border-radius: 15px;
   height: 30vh;
   width: 26vh;
   overflow: hidden;
+  :hover{
+    transform: translateY(-1%);
+  }
 `
 
 export const thumbnailWrapper = styled.div`
