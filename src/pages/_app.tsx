@@ -1,4 +1,5 @@
 import { RecoilRoot } from 'recoil'
+import GlobalStyle from '@/styles/globals'
 import type { AppProps } from 'next/app'
 import GlobalStyle from '@/styles/globals'
 
