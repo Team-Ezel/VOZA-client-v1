@@ -3,8 +3,8 @@ import React from 'react'
 const Default_profile = () => {
   return (
     <svg
-      width='44'
-      height='44'
+      width='38'
+      height='38'
       viewBox='0 0 50 50'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
