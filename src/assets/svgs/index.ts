@@ -8,3 +8,5 @@ export { default as Default_profile } from './Default_profile'
 export { default as Add_outline } from './Add_outline'
 export { default as Default_image } from './Default_image';
 export { default as Add_circle } from './Add_ circle';
+export { default as Arrow_down_dill } from './Arrow_down_fill';
+

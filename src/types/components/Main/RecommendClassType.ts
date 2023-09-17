@@ -8,3 +8,4 @@ export type RecommendClassItemType = {
 export type RecommendClassListType = {
   RecommendClassList: RecommendClassItemType[]
 }
+
