@@ -1,6 +1,6 @@
 import * as S from './style'
 import { useState } from 'react'
-import { OtherClassItemTypes } from '@/types/components/common/OtherClassTypes'
+import { OtherClassItemTypes } from '@/types/components/Main/OtherClassTypes'
 import OtherClassList from '../../molecules/OtherClassList'
 import OtherClassFilter from '../../molecules/OtherClassFilter'
 const dummyOhterClassList = {

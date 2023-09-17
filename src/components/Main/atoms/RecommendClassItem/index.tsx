@@ -1,4 +1,4 @@
-import { RecommendClassItemType } from '@/types/components/common/RecommendClassType'
+import { RecommendClassItemType } from '@/types/components/Main/RecommendClassType'
 import * as I from "@/assets/svgs";
 import * as S from './style'
 

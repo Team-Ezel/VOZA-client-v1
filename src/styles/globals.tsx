@@ -24,6 +24,10 @@ const style = css`
     -o-user-drag: none;
     user-drag: none;
   }
+  a {
+    text-decoration-line: none;
+    
+  }
 `
 
 const GlobalStyle = () => {

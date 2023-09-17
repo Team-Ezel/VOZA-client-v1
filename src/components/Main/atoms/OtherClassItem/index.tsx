@@ -1,5 +1,5 @@
 import * as S from './style'
-import { OtherClassItemTypes } from '@/types/components/common/OtherClassTypes'
+import { OtherClassItemTypes } from '@/types/components/Main/OtherClassTypes'
 function OtherClassItem({
   id,
   title,

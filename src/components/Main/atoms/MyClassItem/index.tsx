@@ -1,5 +1,5 @@
 import * as S from './style'
-import { MyClassItemPropsTypes } from '@/types/components/common/MyClassType'
+import { MyClassItemPropsTypes } from '@/types/components/Main/MyClassType'
 import * as I from '@/assets/svgs'
 function MyClassItem({
   id,

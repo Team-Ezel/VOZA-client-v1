@@ -9,6 +9,7 @@ function OtherClassFilter (){
                     <OtherClassFilterItem
                     name={item.name}
                     value={item.value}
+                    key={item.name}
                     />
                 ))
             }

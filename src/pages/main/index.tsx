@@ -1,12 +1,12 @@
 import MyClass from "@/components/Main/organisms/MyClass";
 import RecommendClass from "@/components/Main/organisms/RecommendClass";
-
+import MainLayout from "./layout";
 function main (){
     return(
-        <> 메인
+        <MainLayout>
         <MyClass/>
         <RecommendClass/>
-        </>
+        </MainLayout>
     );
 }
 

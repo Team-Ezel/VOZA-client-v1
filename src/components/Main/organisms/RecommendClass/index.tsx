@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RecommendClassListType } from '@/types/components/common/RecommendClassType';
+import { RecommendClassListType } from '@/types/components/Main/RecommendClassType';
 import RecommendClassList from '../../molecules/RecommendClassList';
 import * as S from './style';
 
