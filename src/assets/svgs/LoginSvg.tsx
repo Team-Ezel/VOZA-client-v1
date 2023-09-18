@@ -3,14 +3,12 @@ import React from 'react'
 const LoginSvg = () => {
   return (
     <svg
-      width='941'
-      height='778'
-      viewBox='0 0 941 778'
+      viewBox='0 0 779 580'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
     >
-      <rect x='0.693726' width='940.306' height='778' fill='url(#pattern0)' />
+      <rect width='779' height='580' fill='url(#pattern0)' />
       <defs>
         <pattern
           id='pattern0'
@@ -19,8 +17,8 @@ const LoginSvg = () => {
           height='1'
         >
           <use
-            href='#image0_751_2148'
-            transform='matrix(0.000635431 0 0 0.000767995 -0.23598 -0.254499)'
+            xlinkHref='#image0_751_2148'
+            transform='matrix(0.000767009 0 0 0.00103017 -0.396919 -0.541379)'
           />
         </pattern>
         <image
