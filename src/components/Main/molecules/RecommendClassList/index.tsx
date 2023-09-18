@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { RecommendClassListType } from '@/types/components/Main/RecommendClassType'
 import * as S from './style'
-import RecommendClassItem from '../../atoms/RecommendClassItem'
+import RecommendClassItem from '../../atoms/Item/RecommendClassItem'
 
 function RecommendClassList({ RecommendClassList }: RecommendClassListType) {
   const [datas, setDatas] = useState(RecommendClassList)

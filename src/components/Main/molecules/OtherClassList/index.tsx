@@ -1,7 +1,7 @@
 import * as S from "./style";
 import { useState } from "react"
 import { OtherClassListPropsTypes } from "@/types/components/Main/OtherClassTypes"
-import OtherClassItem from "../../atoms/OtherClassItem";
+import OtherClassItem from "../../atoms/Item/OtherClassItem";
 function OtherClassList({ otherClassList }:OtherClassListPropsTypes ){
     const [datas,setDatas] = useState(otherClassList)
     return(

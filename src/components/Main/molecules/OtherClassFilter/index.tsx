@@ -1,4 +1,4 @@
-import OtherClassFilterItem from "../../atoms/OtherClassFilterItem";
+import OtherClassFilterItem from "../../atoms/Item/OtherClassFilterItem";
 import * as S from "./style"
 import { OtherClassFilterListData } from "@/assets/data/OtherClassFilterListData";
 function OtherClassFilter (){
