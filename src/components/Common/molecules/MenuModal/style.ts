@@ -3,12 +3,12 @@ import styled from '@emotion/styled'
 export const MenuModalWrapper = styled.div`
   position: fixed;
   margin-top: 55px;
-  margin-right: 3vw;
   padding: 10px;
   width: 120px;
   height: 180px;
   border-radius: 0.75rem;
   background: #fff;
+  filter: drop-shadow(0px 4px 6px rgba(154, 154, 154, 0.25));
 
   a {
     text-decoration: none;
@@ -16,11 +16,8 @@ export const MenuModalWrapper = styled.div`
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 1.3vh;
   }
-`
-
-export const LogoutTitle = styled.div`
-  position: fixed;
-  margin-top: 25px;
 `
