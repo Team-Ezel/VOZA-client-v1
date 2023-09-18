@@ -8,5 +8,11 @@ export const PromotionTemplates = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  svg {
+    width: 40%;
+  }
 `
