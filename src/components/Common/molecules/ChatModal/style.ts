@@ -8,6 +8,7 @@ export const ChatModalWrapper = styled.div`
   width: 400px;
   border-radius: 0.75rem;
   background: #fff;
+  filter: drop-shadow(0px 4px 6px rgba(154, 154, 154, 0.25));
 `
 
 export const ChatModalHeader = styled.div`
@@ -30,5 +31,6 @@ export const ChatContent = styled.div`
     text-align: center;
     color: #454545;
     font-size: 15px;
+    margin-bottom: 20px;
   }
 `

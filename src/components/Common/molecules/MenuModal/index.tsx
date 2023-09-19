@@ -14,11 +14,9 @@ const MenuModal = () => {
       <Link href={'/'}>
         <p>친구초대</p>
       </Link>
-      <S.LogoutTitle>
         <Link href={'/'}>
           <p>로그아웃</p>
         </Link>
-      </S.LogoutTitle>
     </S.MenuModalWrapper>
   )
 }
