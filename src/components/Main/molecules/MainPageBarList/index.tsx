@@ -1,4 +1,4 @@
-import MainPageBarItem from "../../atoms/MainPageBarItem";
+import MainPageBarItem from "../../atoms/Item/MainPageBarItem";
 import * as S from "./style";
 import { MainPageBarListData } from "@/assets/data/MainPageBarListData";
 function MainPageBarList(){

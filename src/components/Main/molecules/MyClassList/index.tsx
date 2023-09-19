@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as S from './style';
 import { MyClassListPropsTypes } from '@/types/components/Main/MyClassType';
-import MyClassItem from '../../atoms/MyClassItem';
-import NewClassItem from '../../atoms/NewClass';
+import MyClassItem from '../../atoms/Item/MyClassItem';
+import NewClassItem from '../../atoms/Item/NewClass';
 function MyClassList ({datas}:MyClassListPropsTypes){
     const [res,setRes] = useState(datas);
     console.log(res)
