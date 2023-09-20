@@ -1,8 +1,15 @@
 import { atom } from "recoil";
+import { NewClassModalStateType } from "@/types/components/common/NewClassModal"
 
-export const NewClassModal = atom({
+export const newClassModal = atom<NewClassModalStateType>({
     key:"NewClassModal",
-    default:false
+    default:{
+        modal:false,
+        page:"category",
+        category:[],
+        name:"",
+        profile:null
+    }
 })
 
 export const otherClassFilter = atom({
