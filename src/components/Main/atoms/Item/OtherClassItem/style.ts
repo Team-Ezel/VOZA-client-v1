@@ -5,15 +5,15 @@ export const OtherClassItemWrapper = styled.div`
   border-radius: 10px;
   fill: #fff;
   filter: drop-shadow(0px 0px 10px rgba(154, 154, 154, 0.25));
-  height: 23.5vh;
-  width: 58.5vh;
+  height: 170px;
+  width: 470px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: #fff;
   display: flex;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  
-  
 `
 export const thumbnailWrapper = styled.div`
   overflow: hidden;
@@ -24,10 +24,9 @@ export const thumbnailWrapper = styled.div`
 export const TitleWrapper = styled.label`
   font-size: 20px;
   font-weight: 600;
- 
 `
 export const InformationWrapper = styled.div`
-margin-left: 1rem;
+  margin-left: 1rem;
   height: 70%;
   width: 53%;
   display: flex;
@@ -53,7 +52,7 @@ export const TagsLIstWrapper = styled.div`
   white-space: nowrap;
   flex-direction: row;
   ::-webkit-scrollbar {
-  display: none;
+    display: none;
   }
 `
 
