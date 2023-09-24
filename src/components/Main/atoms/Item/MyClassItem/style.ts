@@ -4,8 +4,8 @@ export const MyClassItemWrapper = styled.div`
   cursor: pointer;
   background-color: #fff;
   border-radius: 15px;
-  height: 30vh;
-  width: 26vh;
+  height: 182px;
+  width: 158px;
   overflow: hidden;
   :hover{
     transform: translateY(-1%);
