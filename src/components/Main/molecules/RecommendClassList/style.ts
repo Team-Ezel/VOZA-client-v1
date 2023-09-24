@@ -1,9 +1,8 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 
 export const RecommendClassListWrapper = styled.div`
-    width: 78.79%;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-        justify-content: space-between;
-`;
+width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 
 export const RecommendClassItemWrapper = styled.div`
-  height: 18vh;
-  width: 68vh;
+  height: 120px;
+  width: 480px;
   display: flex;
   align-items: center;
 `
