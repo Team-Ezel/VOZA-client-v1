@@ -63,10 +63,12 @@ function RecommendClass (){
     const [data,setData] = useState(dummyRecommendClassItemList.data);
     return(
         <S.RecommendClassWrapper>
-            <S.titleWrapper>
+          <S.RecommendClass>
+          <S.titleWrapper>
                 추천모임
             </S.titleWrapper>
             <RecommendClassList  RecommendClassList={data} />
+          </S.RecommendClass>
         </S.RecommendClassWrapper>
     )
 }
