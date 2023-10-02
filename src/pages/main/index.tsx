@@ -5,12 +5,14 @@ import Header from '@/components/Common/organisms/Header'
 import NewClassModal from '@/components/Main/organisms/NewClassModal'
 function main() {
   return (
-    <MainLayout>
-      <NewClassModal/>
+    <>
       <Header />
-      <MyClass />
-      <RecommendClass />
-    </MainLayout>
+      <MainLayout>
+        <NewClassModal />
+        <MyClass />
+        <RecommendClass />
+      </MainLayout>
+    </>
   )
 }
 
