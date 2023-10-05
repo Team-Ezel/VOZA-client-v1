@@ -17,7 +17,7 @@ const MemberBenModal = () => {
           color='#fff'
           border='none'
         >
-          권한부여
+          내보내기
         </Button>
       </S.ModalWrapper>
     </S.Main>,
