@@ -6,8 +6,7 @@ import NewClassModal from '@/components/Main/organisms/NewClassModal'
 function main() {
   return (
     <>
-      <Header />
-      <MainLayout>
+\      <MainLayout>
         <NewClassModal />
         <MyClass />
         <RecommendClass />

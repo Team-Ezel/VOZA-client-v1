@@ -5,7 +5,6 @@ import Header from '@/components/Common/organisms/Header'
 function OuterClass() {
   return (
     <>
-      <Header />
       <MainLayout>
         <OutherClass />
       </MainLayout>
