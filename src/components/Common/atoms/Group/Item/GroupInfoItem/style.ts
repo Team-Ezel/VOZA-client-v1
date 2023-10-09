@@ -1,17 +1,19 @@
 import styled from '@emotion/styled'
 
 export const InfoContainer = styled.div`
-  width: 18.5625rem;
+  width: 17.5625rem;
   height: 23.5rem;
   flex-shrink: 0;
 
-  padding-left: 100px;
+  margin-top: 50px;
+  margin-left: 250px;  
+
 `
 
 export const ImgContainer = styled.div`
   display: flex;
-  width: 16rem;
-  height: 12rem;
+  width: 15rem;
+  height: 11rem;
   justify-content: center;
   align-items: center;
 
