@@ -2,11 +2,9 @@ import styled from '@emotion/styled'
 
 export const InfoContainer = styled.div`
   width: 18.5625rem;
-  height: 16rem;
+  height: 23.5rem;
   flex-shrink: 0;
 
-  margin-top: 100px;
-  padding-top: 55px;
   padding-left: 100px;
 `
 
