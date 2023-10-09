@@ -22,5 +22,5 @@ export default function useModal() {
     })
   }, [setModal])
 
-  return { openModal, closeModal, visible: !modal.visible }
+  return { openModal, closeModal, visible: modal.visible }
 }

@@ -1,4 +1,5 @@
 import Header from "@/components/Common/organisms/Header";
+import Modal from "@/components/Common/organisms/Modal";
 import { layoutPropType } from "@/types/layout/layoutType";
 
 export default function layout({ children }:layoutPropType){
@@ -9,6 +10,7 @@ export default function layout({ children }:layoutPropType){
         <Header/>
         { children }
         //footer
+        <Modal/>
         </>
     )
 }
