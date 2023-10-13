@@ -21,6 +21,9 @@ export const TitleText = styled.h1`
   @media (min-width: 1920px) {
     font-size: 50px;
     // 모니터
+    span {
+      color: #2260ff;
+    }
   }
 `
 
