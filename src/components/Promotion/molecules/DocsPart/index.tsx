@@ -5,7 +5,7 @@ const DocsPart = () => {
     <>
       <S.TitleText>
         모임을 더욱 간단하게!
-        <br /> VOZA로 시작하다
+        <br /> <span>VOZA</span>로 시작하다
       </S.TitleText>
       <S.DetailText>더욱 쉽고 간편한 모임 만들기 서비스</S.DetailText>
     </>
