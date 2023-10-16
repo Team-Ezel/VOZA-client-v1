@@ -10,4 +10,8 @@ export { default as Default_image } from './Default_image'
 export { default as Add_circle } from './Add_ circle'
 export { default as Arrow_down_dill } from './Arrow_down_fill'
 export { default as Camera } from './Camera'
+export { default as Out } from './Out'
+export { default as Timers } from './Timers'
+export { default as Settings } from './Setting'
+export { default as Ben } from './Ben'
 export { default as Arrow_down_2 } from "./Arrow_down_2"

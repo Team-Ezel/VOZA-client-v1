@@ -11,7 +11,7 @@ const Profile : React.FC<ProfileProps> = ({ clicked, setClicked }) => {
 
   return (
     <S.ProfileWrapper>
-      <Default_profile />
+      <Default_profile width={38} height={38} />
       <div onClick={() => setClicked(!clicked)}>
         {clicked ? <Arrow_up /> : <Arrow_down />}
       </div>
