@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const HeaderWrapper = styled.div`
-  position: fixed;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-around;
