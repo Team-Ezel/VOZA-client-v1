@@ -10,6 +10,7 @@ export const TimeItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `
 
 export const Timetext = styled.p`
