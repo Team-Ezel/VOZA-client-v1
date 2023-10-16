@@ -7,6 +7,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 
+type ProfileModalProps = {
+  onClose: () => void
+}
+
 const ExampleData = [
   {
     GroupImgURL:
@@ -30,11 +34,17 @@ const ExampleData = [
   },
 ]
 
-const ProfileModal = () => {
+const ProfileModal: React.FC<ProfileModalProps> = ({ onClose }) => {
+  const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose()
+    }
+  }
+
   const slidesPerView = ExampleData.length > 3 ? 3 : ExampleData.length
 
   return (
-    <S.Main>
+    <S.Main onClick={handleModalClick}>
       <S.ModalWrapper>
         <Default_profile width={100} height={100} />
         <S.Name>윤수용</S.Name>

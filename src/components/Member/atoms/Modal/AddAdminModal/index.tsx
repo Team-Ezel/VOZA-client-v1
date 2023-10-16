@@ -3,10 +3,20 @@ import * as S from './style'
 import Button from '@/components/Common/atoms/Button/Button'
 import { createPortal } from 'react-dom'
 
-const AddAdminModal = () => {
-  return (
-    createPortal(
-    <S.Main>
+type AddAdminModalProps = {
+  onClose: () => void
+}
+
+const AddAdminModal: React.FC<AddAdminModalProps> = ({ onClose }) => {
+
+  const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose()
+    }
+  }
+
+  return createPortal(
+    <S.Main onClick={handleModalClick}>
       <S.ModalWrapper>
         <S.Title>관리자 권한 부여</S.Title>
         <S.Subtitle>소모임에 대한 대부분의 권한이 생겨요!</S.Subtitle>
@@ -21,8 +31,8 @@ const AddAdminModal = () => {
           권한부여
         </Button>
       </S.ModalWrapper>
-    </S.Main>
-    ,document.body )
+    </S.Main>,
+    document.body,
   )
 }
 

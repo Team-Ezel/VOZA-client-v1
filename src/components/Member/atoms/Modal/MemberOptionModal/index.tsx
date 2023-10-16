@@ -51,9 +51,17 @@ const MemberOptionModal = () => {
         </S.SVGContainer>
       </S.ModalOption>
 
-      {isAddAdminModalOpen && <AddAdminModal />}
-      {isMemberBenModalOpen && <MemberBenModal />}
-      {isMemberSuspensionModalOpen && <MemberSuspensionModal />}
+      {isAddAdminModalOpen && (
+        <AddAdminModal onClose={() => setAddAdminModalOpen(false)} />
+      )}
+      {isMemberBenModalOpen && (
+        <MemberBenModal onClose={() => setMemberBenModalOpen(false)} />
+      )}
+      {isMemberSuspensionModalOpen && (
+        <MemberSuspensionModal
+          onClose={() => setMemberSuspensionModalOpen(false)}
+        />
+      )}
     </S.OptionModalWrapper>
   )
 }
