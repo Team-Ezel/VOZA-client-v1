@@ -5,7 +5,7 @@ export const GroupMemberTemplates = styled.div`
   height: 100vh;
   padding-top: 100px;
   display: flex;
-  
+  justify-content: center;
 
   background-color: #f7f8fa;
 `

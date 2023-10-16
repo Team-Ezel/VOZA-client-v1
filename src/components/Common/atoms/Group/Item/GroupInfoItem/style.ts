@@ -6,7 +6,6 @@ export const InfoContainer = styled.div`
   flex-shrink: 0;
 
   margin-top: 50px;
-  margin-left: 20vw;  
 
 `
 
