@@ -104,6 +104,9 @@ const style = css`
     text-decoration-line: none;
     
   }
+  body{
+    background-color: #F7F8FA;
+  }
 `
 
 
