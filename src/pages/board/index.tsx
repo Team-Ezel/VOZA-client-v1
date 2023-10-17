@@ -1,9 +1,9 @@
-import Header from '@/components/Common/organisms/Header'
+import BoardTemplates from '@/components/Board/templates/boardTemplates'
 
 function GroupBoard() {
   return (
     <>
-      <Header />
+      <BoardTemplates />
     </>
   )
 }

@@ -16,7 +16,7 @@ const API = () => {
         tokenManager.accessToken,
       ) &&
       tokenManager.validateToken(
-        //tokenManager.refreshExp,
+        tokenManager.refreshExp,
         tokenManager.refreshToken,
       )
     ) {
