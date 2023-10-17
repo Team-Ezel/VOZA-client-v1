@@ -1,20 +1,34 @@
 import * as S from "./style"
-import moment from 'moment';
+import React, { useState } from 'react';
+import moment, { Moment as MomentTypes } from 'moment';
 import buildCalendar from "@/utils/buildCalender";
+import CalenderList from "../../molecules/CalenderList";
+import CalenderWeekList from "../../atoms/CalenderWeek";
+import CalenderMonth from "../../molecules/CalenderChange";
 
 export default function CalenderBox() {
-    const date = moment();
+    const [date, setdate] = useState<moment.Moment>(() => moment());
+    const jumpToMonth = (num: number) => (num ? setdate(date.clone().add(30, 'day')) : setdate(date.clone().subtract(30, 'day')));
+    let calender = buildCalendar(date);
 
-
-    console.log(buildCalendar(date))
     return (
         <S.CalenderBoxWrapper>
+            <CalenderMonth month={date.format('MM')} onClick={jumpToMonth} type={"월"} />
             <S.CalenderLine BackgroundColor="#E2E2EE" />
-            <S.CalenderLine BackgroundColor="#F2F2F4" />
-            <S.CalenderLine BackgroundColor="#F2F2F4" />
-            <S.CalenderLine BackgroundColor="#F2F2F4" />
-            <S.CalenderLine BackgroundColor="#F2F2F4" />
-            <S.CalenderLine BackgroundColor="#F2F2F4" />
+            <CalenderWeekList />
+            {
+                calender.map((i, idx) => (
+                    <>
+                        <S.CalenderLine BackgroundColor="#F2F2F4" />
+                        <CalenderList
+                            data={i}
+                            key={idx}
+                            date={date}
+                            onClick={(num) => { }}
+                        />
+                    </>
+                ))
+            }
         </S.CalenderBoxWrapper>
     )
 }
