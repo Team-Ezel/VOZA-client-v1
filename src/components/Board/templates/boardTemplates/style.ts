@@ -4,7 +4,6 @@ export const BoardTemplates = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f7f8fa;
-  height: 200vh;
 `
 
 export const BoardContents = styled.div`
