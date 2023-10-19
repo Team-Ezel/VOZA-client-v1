@@ -14,7 +14,7 @@ export const Main = styled.div`
   background: rgba(25, 25, 25, 0.3);
 `
 
-export const ModalWrapper = styled.div`
+export const ModalContainer = styled.div`
   padding: 29px;
   width: 24.875rem;
   height: 11.75rem;

@@ -17,7 +17,7 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ onClose }) => {
 
   return createPortal(
     <S.Main onClick={handleModalClick}>
-      <S.ModalWrapper>
+      <S.ModalContainer>
         <S.Title>관리자 권한 부여</S.Title>
         <S.Subtitle>소모임에 대한 대부분의 권한이 생겨요!</S.Subtitle>
         <Button
@@ -30,7 +30,7 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ onClose }) => {
         >
           권한부여
         </Button>
-      </S.ModalWrapper>
+      </S.ModalContainer>
     </S.Main>,
     document.body,
   )

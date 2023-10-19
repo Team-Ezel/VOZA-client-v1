@@ -16,7 +16,7 @@ const MemberBenModal: React.FC<MemberBenModalProps> = ({ onClose }) => {
   };
   return createPortal(
     <S.Main onClick={handleModalClick}>
-      <S.ModalWrapper>
+      <S.ModalContainer>
         <S.Title>멤버 내보내기</S.Title>
         <S.Subtitle>정말로 이 멤버를 내보내실건가요?</S.Subtitle>
         <Button
@@ -29,7 +29,7 @@ const MemberBenModal: React.FC<MemberBenModalProps> = ({ onClose }) => {
         >
           내보내기
         </Button>
-      </S.ModalWrapper>
+      </S.ModalContainer>
     </S.Main>,
     document.body,
   )

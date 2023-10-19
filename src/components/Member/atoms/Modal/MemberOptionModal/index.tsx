@@ -31,24 +31,24 @@ const MemberOptionModal = () => {
   )
 
   return (
-    <S.OptionModalWrapper>
+    <S.ModalContainer>
       <S.ModalOption onClick={() => setAddAdminModalOpen(true)}>
         관리자 권한 부여
       </S.ModalOption>
       <S.ModalOption onClick={() => setMemberSuspensionModalOpen(true)}>
         멤버 임시 정지
-        <S.SVGContainer>
+        <S.AssetsWrapper>
           <Timers />
-        </S.SVGContainer>
+        </S.AssetsWrapper>
       </S.ModalOption>
       <S.ModalOption
         onClick={() => setMemberBenModalOpen(true)}
         style={{ color: 'red' }}
       >
         멤버 내보내기
-        <S.SVGContainer>
+        <S.AssetsWrapper>
           <Ben />
-        </S.SVGContainer>
+        </S.AssetsWrapper>
       </S.ModalOption>
 
       {isAddAdminModalOpen && (
@@ -62,7 +62,7 @@ const MemberOptionModal = () => {
           onClose={() => setMemberSuspensionModalOpen(false)}
         />
       )}
-    </S.OptionModalWrapper>
+    </S.ModalContainer>
   )
 }
 
