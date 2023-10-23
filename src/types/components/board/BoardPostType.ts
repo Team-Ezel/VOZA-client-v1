@@ -3,5 +3,5 @@ export type BoardPostType = {
   title: string
   boardType?: string
   author: string
-  createdDate: Date
+  createdDate: string
 }
