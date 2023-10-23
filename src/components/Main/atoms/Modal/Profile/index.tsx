@@ -9,29 +9,28 @@ function Profile() {
   const [NewClassModalState, setNewClassModalState] =
     useRecoilState<NewClassModalStateType>(newClassModal)
   const fileRef = useRef(null)
-  const handleUpload = () => {}
+  const handleUpload = () => { }
 
   return (
     <S.ClassProfileWrapper>
       <S.ProfileWrapper>
-      <S.Profile />
-      <S.ProfileButtonWrapper>
-        <S.AddProfileButton htmlFor='file'>
-          <I.Camera />
-          <p>사진추가</p>
-        </S.AddProfileButton>
-        <input
-          accept='file/*'
-          multiple
-          type='file'
-          id='file'
-          ref={fileRef}
-          onChange={handleUpload}
-        />
-      </S.ProfileButtonWrapper>
+        <S.Profile />
+        <S.ProfileButtonWrapper>
+          <S.AddProfileButton htmlFor='file'>
+            <I.Camera />
+            <p>사진추가</p>
+          </S.AddProfileButton>
+          <input
+            accept='file/*'
+            multiple
+            type='file'
+            id='file'
+            ref={fileRef}
+            onChange={handleUpload}
+          />
+        </S.ProfileButtonWrapper>
       </S.ProfileWrapper>
       <Button
-        children='다음'
         width='100%'
         height='3rem'
         borderRadius='5px'
@@ -47,7 +46,7 @@ function Profile() {
             modal: false,
           })
         }}
-      />
+      >다음</Button>
     </S.ClassProfileWrapper>
   )
 }
