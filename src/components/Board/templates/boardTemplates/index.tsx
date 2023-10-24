@@ -4,8 +4,18 @@ import * as S from './style'
 import BoardInfo from '../../molecules/BoardInfo'
 import { BoardInfoType } from '@/types/components/board/BoardInfoType'
 import PostList from '../../molecules/PostList'
+import { useEffect } from 'react'
+import WriteModal from '../../atoms/modal/WriteModal'
+import { useRecoilValue } from 'recoil'
+import { boardModalAtom } from '@/atoms/atoms'
 
 const BoardTemplates = () => {
+  const modalState = useRecoilValue(boardModalAtom)
+
+  useEffect(() => {
+    console.log(modalState)
+  }, [modalState])
+
   const dummyInfoData: BoardInfoType = {
     imageUrl:
       'https://i.namu.wiki/i/DcfUJJhhFFx3j4cuMYVG8x0otnaalLcaP6uTrQu_zKJJzJKpIH0_L5A9AOykJwWCyCmp2_pUmGRC7SgWetLg6A.webp',
@@ -19,7 +29,7 @@ const BoardTemplates = () => {
         title: '안녕하세요',
         boardType: '일반',
         author: '이아론',
-        createdDate: '2023-08-26 21:22:11',
+        createdDate: '2023-08-26 21:22',
         id: 1,
       },
       {
@@ -154,17 +164,20 @@ const BoardTemplates = () => {
   }
 
   return (
-    <S.BoardTemplates>
-      <Header />
-      <BoardHeader />
-      <S.BoardContents>
-        <BoardInfo {...dummyInfoData} />
-        <S.BoardPostLists>
-          <PostList props={dummyPostListData} listType={'게시글'} />
-          <PostList props={dummyVoteListData} listType={'투표글'} />
-        </S.BoardPostLists>
-      </S.BoardContents>
-    </S.BoardTemplates>
+    <>
+      {modalState === true ? <WriteModal /> : ''}
+      <S.BoardTemplates>
+        <Header />
+        <BoardHeader />
+        <S.BoardContents>
+          <BoardInfo {...dummyInfoData} />
+          <S.BoardPostLists>
+            <PostList props={dummyPostListData} listType={'게시글'} />
+            <PostList props={dummyVoteListData} listType={'투표글'} />
+          </S.BoardPostLists>
+        </S.BoardContents>
+      </S.BoardTemplates>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import * as S from './style'
 import { BoardPostType } from '@/types/components/board/BoardPostType'
-import BoardPostItem from '../../atoms/BoardPostItem'
+import BoardPostItem from '../../atoms/item/BoardPostItem'
 import NoVoteSvg from '@/assets/svgs/NoVoteSvg'
 import NoPostSvg from '@/assets/svgs/NoPostSvg'
 
