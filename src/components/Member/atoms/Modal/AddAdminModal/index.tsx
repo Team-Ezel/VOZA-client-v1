@@ -2,12 +2,37 @@ import React from 'react'
 import * as S from './style'
 import Button from '@/components/Common/atoms/Button/Button'
 import { createPortal } from 'react-dom'
+import { useRouter } from 'next/router'
+import axios from 'axios'
 
 type AddAdminModalProps = {
+  memberId: number
   onClose: () => void
 }
 
-const AddAdminModal: React.FC<AddAdminModalProps> = ({ onClose }) => {
+const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
+  const baseurl = process.env.NEXT_PUBLIC_BASEURL
+  const router = useRouter()
+  const { id } = router.query
+
+  const updateAdmin = async () => {
+    try {
+      const accessToken = localStorage.getItem('kakao-accessToken')
+
+      if (!accessToken) {
+        console.error('Access Token이 없습니다.')
+        return
+      }
+
+      await axios.patch(`${baseurl}/group/${id}/member/grant/${memberId}`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -27,6 +52,7 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ onClose }) => {
           background='#3355CD'
           color='#fff'
           border='none'
+          onClick={updateAdmin}
         >
           권한부여
         </Button>

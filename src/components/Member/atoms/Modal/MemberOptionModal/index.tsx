@@ -3,7 +3,11 @@ import * as S from './style'
 import { Ben, Timers } from '@/assets/svgs'
 import dynamic from 'next/dynamic'
 
-const MemberOptionModal = () => {
+type MemberOptionModalProps = {
+  memberId: number
+}
+
+const MemberOptionModal = ({ memberId }: MemberOptionModalProps) => {
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false)
   const [isMemberBenModalOpen, setMemberBenModalOpen] = useState(false)
   const [isMemberSuspensionModalOpen, setMemberSuspensionModalOpen] =
@@ -52,10 +56,16 @@ const MemberOptionModal = () => {
       </S.ModalOption>
 
       {isAddAdminModalOpen && (
-        <AddAdminModal onClose={() => setAddAdminModalOpen(false)} />
+        <AddAdminModal
+          memberId={memberId}
+          onClose={() => setAddAdminModalOpen(false)}
+        />
       )}
       {isMemberBenModalOpen && (
-        <MemberBenModal onClose={() => setMemberBenModalOpen(false)} />
+        <MemberBenModal
+          memberId={memberId}
+          onClose={() => setMemberBenModalOpen(false)}
+        />
       )}
       {isMemberSuspensionModalOpen && (
         <MemberSuspensionModal

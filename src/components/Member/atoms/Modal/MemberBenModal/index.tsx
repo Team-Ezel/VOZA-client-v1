@@ -2,18 +2,49 @@ import React from 'react'
 import * as S from './style'
 import Button from '@/components/Common/atoms/Button/Button'
 import { createPortal } from 'react-dom'
+import { useRouter } from 'next/router'
+import axios from 'axios'
 
-type MemberBenModalProps ={
-  onClose: () => void;
+type MemberBenModalProps = {
+  memberId: number
+  onClose: () => void
 }
 
-const MemberBenModal: React.FC<MemberBenModalProps> = ({ onClose }) => {
-  // 모달 바깥 영역을 클릭할 때 onClose 함수를 호출하여 모달을 닫음
+const MemberBenModal: React.FC<MemberBenModalProps> = ({
+  memberId,
+  onClose,
+}) => {
+  const baseurl = process.env.NEXT_PUBLIC_BASEURL
+  const router = useRouter()
+  const { id } = router.query
+
+  const benMember = async () => {
+    try {
+      const accessToken = localStorage.getItem('kakao-accessToken')
+
+      if (!accessToken) {
+        console.error('Access Token이 없습니다.')
+        return
+      }
+
+      await axios.delete(
+        `${baseurl}/group/${id}/member/${memberId}}?kickOutTime:ALL_DAY_STOP`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      )
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const handleModalClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      onClose()
     }
-  };
+  }
   return createPortal(
     <S.Main onClick={handleModalClick}>
       <S.ModalContainer>
@@ -26,6 +57,7 @@ const MemberBenModal: React.FC<MemberBenModalProps> = ({ onClose }) => {
           background='#FF3120'
           color='#fff'
           border='none'
+          onClick={benMember}
         >
           내보내기
         </Button>
