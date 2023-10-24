@@ -4,10 +4,10 @@ import * as S from './style'
 import * as I from '@/assets/svgs'
 
 function NewClassItem() {
-  const [NewClassModalState,setNewClassModalState] = useRecoilState(newClassModal);
+  const [NewClassModalState, setNewClassModalState] = useRecoilState(newClassModal);
 
   return (
-    <S.NewClassWrapper onClick={()=>setNewClassModalState({...NewClassModalState,modal:true})}>
+    <S.NewClassWrapper onClick={() => setNewClassModalState({ ...NewClassModalState, modal: true, page: "category" })}>
       <S.InformationWrapper>
         <I.Add_circle />
         <p>만들기</p>
@@ -15,4 +15,5 @@ function NewClassItem() {
     </S.NewClassWrapper>
   )
 }
+
 export default NewClassItem

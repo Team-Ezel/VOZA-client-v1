@@ -1,6 +1,6 @@
 import Button from '@/components/Common/atoms/Button/Button'
 import { useRecoilState } from 'recoil'
-import { newClassModal } from '@/atoms/atoms'
+import { newClassModal, newClassState } from '@/atoms/atoms'
 import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
 import { useState } from 'react'
 import * as S from './style'
@@ -10,6 +10,7 @@ function ClassName() {
   const [validation, setValidation] = useState<boolean>(false)
   const [NewClassModalState, setNewClassModalState] =
     useRecoilState<NewClassModalStateType>(newClassModal)
+  const [newclassState, setNewclassState] = useRecoilState(newClassState);
   const inputValue = name.length > 0
   return (
     <S.ClassNameWrapper>
@@ -31,7 +32,7 @@ function ClassName() {
         fontSize='18px'
         onClick={() => {
           if (inputValue) {
-            setNewClassModalState({ ...NewClassModalState, name: `${name}` })
+            setNewclassState({ ...newclassState, groupName: name })
             setNewClassModalState({ ...NewClassModalState, page: 'profile' })
           }
         }}

@@ -1,17 +1,26 @@
 import Button from '@/components/Common/atoms/Button/Button'
 import { useRecoilState } from 'recoil'
-import { newClassModal } from '@/atoms/atoms'
+import { newClassModal, newClassState } from '@/atoms/atoms'
 import * as S from './style'
 import { NewClassModalCategoryListData } from '@/assets/data/NewClassModalCategoryListData'
 import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { isNotNull } from '@/utils/isNotNull'
 
 function Category() {
   const [NewClassModalState, setNewClassModalState] = useRecoilState<NewClassModalStateType>(newClassModal)
+  const [newclassState, setNewclassState] = useRecoilState(newClassState);
   const [category, setCategory] = useState<string[]>([]);
   const categorySelect = isNotNull(category[0]);
 
+  useEffect(() => {
+    setNewclassState({
+      groupName: "",
+      introduceGroup: "",
+      region: "",
+      tags: []
+    })
+  }, [])
 
   return (
     <S.CategoryWrapper>
@@ -43,7 +52,7 @@ function Category() {
         fontSize='18px'
         onClick={() => {
           if (categorySelect) {
-            setNewClassModalState({ ...NewClassModalState, category: category })
+            setNewclassState({ ...newclassState, tags: category })
             setNewClassModalState({ ...NewClassModalState, page: "name" })
           }
         }}

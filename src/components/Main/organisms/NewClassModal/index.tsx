@@ -8,9 +8,6 @@ function NewClassModal() {
     const [NewClassModalState, setNewClassModalState] = useRecoilState<NewClassModalStateType>(newClassModal);
     const [subTitle, setSubTitle] = useState("어떤 모임을 만드실 건가요?");
 
-    let newClassformData = new FormData();
-
-
     return (
         NewClassModalState.modal ?
             <S.NewClassModalWrapper>

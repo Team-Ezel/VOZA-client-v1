@@ -11,7 +11,7 @@ function MyClassItem({
   return (
     <S.MyClassItemWrapper>
       <S.thumbnailWrapper>
-        <img src='https://s3.ap-northeast-2.amazonaws.com/gimuwiki/file/c5c1e8ce-61d6-4998-8a58-11e712e67eac.jpg'/>
+        <img src='https://s3.ap-northeast-2.amazonaws.com/gimuwiki/file/c5c1e8ce-61d6-4998-8a58-11e712e67eac.jpg' />
       </S.thumbnailWrapper>
       <S.InformationWrapper>
         <S.TitleWrapper>{title}</S.TitleWrapper>

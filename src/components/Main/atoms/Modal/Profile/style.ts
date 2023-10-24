@@ -19,6 +19,15 @@ export const Profile = styled.div`
   height: 60%;
   border-radius: 9px;
   background-color: #f2f2f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `
 
 export const ProfileButtonWrapper = styled.div`
