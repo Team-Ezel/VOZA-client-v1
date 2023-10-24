@@ -3,20 +3,19 @@ import * as S from './style';
 import { MyClassListPropsTypes } from '@/types/components/Main/MyClassType';
 import MyClassItem from '../../atoms/Item/MyClassItem';
 import NewClassItem from '../../atoms/Item/NewClass';
-function MyClassList ({datas}:MyClassListPropsTypes){
-    const [res,setRes] = useState(datas);
-    console.log(res)
-    return(
+function MyClassList({ datas }: MyClassListPropsTypes) {
+    const [res, setRes] = useState(datas);
+    return (
         <S.MyClassList>
-            <NewClassItem/>
-            {res.map((item)=>(
+            <NewClassItem />
+            {res.map((item) => (
                 <MyClassItem
-                id={item.id}
-                title={item.title}
-                leader={item.leader}
-                member={item.member}
-                thumbnail={item.thumbnail}
-                key={item.id}
+                    id={item.id}
+                    title={item.title}
+                    leader={item.leader}
+                    member={item.member}
+                    thumbnail={item.thumbnail}
+                    key={item.id}
                 />
             ))}
         </S.MyClassList>

@@ -10,7 +10,7 @@ function ClassName() {
   const [validation, setValidation] = useState<boolean>(false)
   const [NewClassModalState, setNewClassModalState] =
     useRecoilState<NewClassModalStateType>(newClassModal)
-  const inputValue = name.length>0
+  const inputValue = name.length > 0
   return (
     <S.ClassNameWrapper>
       <S.ClassNameInputBox
@@ -22,7 +22,6 @@ function ClassName() {
         공백 사용이 불가능해요!
       </S.NoticeWrapper>
       <Button
-        children='다음'
         width='100%'
         height='3rem'
         borderRadius='5px'
@@ -32,11 +31,11 @@ function ClassName() {
         fontSize='18px'
         onClick={() => {
           if (inputValue) {
-            setNewClassModalState({ ...NewClassModalState, name:`${name}` })
+            setNewClassModalState({ ...NewClassModalState, name: `${name}` })
             setNewClassModalState({ ...NewClassModalState, page: 'profile' })
           }
         }}
-      />
+      >다음</Button>
     </S.ClassNameWrapper>
   )
 }

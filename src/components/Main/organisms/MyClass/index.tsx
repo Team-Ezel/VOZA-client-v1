@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MyClassList from '../../molecules/MyClassList'
 import * as S from './style'
+import NewClassModal from '@/components/Main/organisms/NewClassModal'
 
 const dummyListItem = {
   data: {
@@ -60,13 +61,18 @@ const dummyListItem = {
 }
 
 function MyClass() {
-    const [datas,setDatas] = useState(dummyListItem.data.groupList);
+  const [datas, setDatas] = useState(dummyListItem.data.groupList);
+
+
   return (
-    <S.MyClassWrapper>
-      <MyClassList 
-      datas={datas}
-      />
-    </S.MyClassWrapper>
+    <>
+      <NewClassModal />
+      <S.MyClassWrapper>
+        <MyClassList
+          datas={datas}
+        />
+      </S.MyClassWrapper>
+    </>
   )
 }
 
