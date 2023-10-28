@@ -1,5 +1,3 @@
-
-
 export const OtherClassFilterListData = [
   {
     name: '전체',
@@ -7,7 +5,7 @@ export const OtherClassFilterListData = [
   },
   {
     name: '취미',
-    value: 'hobby'
+    value: 'hobby',
   },
   {
     name: '스포츠',
