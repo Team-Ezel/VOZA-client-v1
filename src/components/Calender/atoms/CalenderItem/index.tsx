@@ -6,7 +6,9 @@ export default function CalenderItem({ data, onClick }: CalenderItemPropsTypes) 
     const date = new Date();
     const CurrentDate = `${data._d?.getFullYear()}${data._d?.getMonth()}${data._d?.getDate()}` ==
         `${date.getFullYear()}${date.getMonth()}${date.getDate()}`
-    // let isGrayed = current.format('MM') !== data.format('MM') ? 'grayed' : ''
+
+
+
     return (
         <S.CalenderItemWrapper onClick={onClick}>
             <S.nameWrapper color={CurrentDate ? "#fff" : "#000000"} backgroundColor={CurrentDate ? "#2B65D9" : "#fff"} >

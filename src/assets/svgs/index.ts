@@ -18,3 +18,7 @@ export { default as Arrow_right } from "./Arrow_right"
 export { default as Add } from "./Add"
 
 export { default as Calender } from "./Calender";
+export { default as Calender_2 } from "./Calender_2"
+
+export { default as Timer } from "./Timer"
+export { default as Wave } from "./Wave"
