@@ -11,10 +11,11 @@ export default function CalenderModal() {
     const [ModalState, setModalState] = useRecoilState(calenderModal)
     const [title, setTitle] = useState<string>("")
     const [content, setContent] = useState<string>("")
-    const [Date, setDate] = useState<string>()
-
+    const [startDate, setStartDate] = useState<string>("")
+    const [endDate, setEndDate] = useState<string>("")
     const Upload = () => {
         setModalState(false)
+
     }
     return (
         <>
@@ -28,7 +29,12 @@ export default function CalenderModal() {
                                     <S.InputWrapper placeholder="제목을 입력해주세요." value={title} onChange={(e) => { setTitle(e.target.value) }} />
                                 </ScheduleOptionItem>
                                 <ScheduleOptionItem title="기간" >
-                                    <DateInputList />
+                                    <DateInputList
+                                        startDate={startDate}
+                                        setStartDate={setStartDate}
+                                        endDate={endDate}
+                                        setEndDate={setEndDate}
+                                    />
                                 </ScheduleOptionItem>
                                 <ScheduleOptionItem title="내용">
                                     <S.ContentInputWrapper placeholder="내용을 입력해주세요." value={content} onChange={(e) => { setContent(e.target.value) }} />

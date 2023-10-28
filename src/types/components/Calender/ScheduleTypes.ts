@@ -41,3 +41,9 @@ export interface DateInputPropsType {
     setValue: React.Dispatch<React.SetStateAction<string>>
 }
 
+export interface DateInputListPropsType {
+    startDate: string
+    setStartDate: React.Dispatch<React.SetStateAction<string>>
+    endDate: string
+    setEndDate: React.Dispatch<React.SetStateAction<string>>
+}

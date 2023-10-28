@@ -15,6 +15,8 @@ export const InputWrapper = styled.div`
     display: flex;
     flex-direction: row-reverse;
     width: fit-content;
+    height: fit-content;
+    align-items: center;
 `
 
 export const DateInput = styled.input<DateInputPropsType>`
@@ -26,6 +28,16 @@ export const DateInput = styled.input<DateInputPropsType>`
     background-color: ${props => props.backgroundColor};
     border: ${props => props.border || "none"};
     border-radius: ${props => props.borderRadius};
-    padding: 15px 15px;
+    padding: 15px 38px 15px 15px;
     outline: none;
+`
+
+export const SvgWrapper = styled.div`
+margin-right: 10px;
+height: fit-content;
+width: fit-content;
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
 `

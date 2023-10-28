@@ -2,13 +2,13 @@ import * as S from "./style"
 import * as I from "@/assets/svgs"
 import { useState, useEffect } from "react"
 import DateInput from "../../atoms/DateInput";
-export default function DateInputList() {
+import { DateInputListPropsType } from "@/types/components/Calender/ScheduleTypes";
+export default function DateInputList({ startDate, setStartDate, endDate, setEndDate }: DateInputListPropsType) {
     const [startDateValue, setStartDateValue] = useState<string>("");
     const [startTimeValue, setStartTimeValue] = useState<string>("");
     const [endDateValue, setEndDateValue] = useState<string>("");
     const [endTimeValue, setEndTimeValue] = useState<string>("");
-    const [startDate, setStartDate] = useState<string>("");
-    const [endDate, setEndDate] = useState<string>("");
+
 
 
     useEffect(() => {
