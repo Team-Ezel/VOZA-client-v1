@@ -25,6 +25,5 @@ export { default as Out } from './Out'
 export { default as Timers } from './Timers'
 export { default as Settings } from './Setting'
 export { default as Ben } from './Ben'
-export { default as Arrow_down_2 } from './Arrow_down_2'
 export { default as Cross } from './Cross'
 
