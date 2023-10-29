@@ -8,19 +8,19 @@ export default function Toolbar({ contents, setContents }: ToolbarPropsType) {
         <S.ToolbarWrapper>
             <S.ToolbarSectionWrapper>
                 {ToolbarListData.filter((i) => i.section === 1).map((i) => (
-                    <S.ToolbarItemWrapper key={i.content} >{<i.img />}</S.ToolbarItemWrapper>
+                    <S.ToolbarItemWrapper key={i.content} onClick={() => { setContents(contents + i.content) }} >{<i.img />}</S.ToolbarItemWrapper>
                 ))}
             </S.ToolbarSectionWrapper>
             <S.ToolbarLine />
             <S.ToolbarSectionWrapper>
                 {ToolbarListData.filter((i) => i.section === 2).map((i) => (
-                    <S.ToolbarItemWrapper key={i.content}>{<i.img />}</S.ToolbarItemWrapper>
+                    <S.ToolbarItemWrapper key={i.content} onClick={() => { setContents(contents + i.content) }} >{<i.img />}</S.ToolbarItemWrapper>
                 ))}
             </S.ToolbarSectionWrapper>
             <S.ToolbarLine />
             <S.ToolbarSectionWrapper>
                 {ToolbarListData.filter((i) => i.section === 3).map((i) => (
-                    <S.ToolbarItemWrapper key={i.content}>{<i.img />}</S.ToolbarItemWrapper>
+                    <S.ToolbarItemWrapper key={i.content} onClick={() => { setContents(contents + i.content) }} >{<i.img />}</S.ToolbarItemWrapper>
                 ))}
             </S.ToolbarSectionWrapper>
         </S.ToolbarWrapper>
