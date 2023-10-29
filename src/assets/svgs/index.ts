@@ -10,9 +10,21 @@ export { default as Default_image } from './Default_image'
 export { default as Add_circle } from './Add_ circle'
 export { default as Arrow_down_dill } from './Arrow_down_fill'
 export { default as Camera } from './Camera'
+export { default as Arrow_down_2 } from "./Arrow_down_2"
+export { default as Arrow_left } from "./Arrow_left"
+export { default as Arrow_right } from "./Arrow_right"
+export { default as Add } from "./Add"
+
+export { default as Calender } from "./Calender";
+export { default as Calender_2 } from "./Calender_2"
+
+export { default as Timer } from "./Timer"
+export { default as Wave } from "./Wave"
+
 export { default as Out } from './Out'
 export { default as Timers } from './Timers'
 export { default as Settings } from './Setting'
 export { default as Ben } from './Ben'
 export { default as Arrow_down_2 } from './Arrow_down_2'
 export { default as Cross } from './Cross'
+
