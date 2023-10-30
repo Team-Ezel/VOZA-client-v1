@@ -23,22 +23,22 @@ export const ToolbarListData = [
     },
     {
         img: I.Toolbar_Bold,
-        content: "",
+        content: "**텍스트**",
         section: 2
     },
     {
         img: I.Toolbar_Italic,
-        content: "",
+        content: "*텍스트*",
         section: 2
     },
     {
         img: I.Toolbar_Strikethrough,
-        content: "",
+        content: "~~텍스트~~",
         section: 2
     },
     {
         img: I.Toolbar_Link,
-        content: "",
+        content: "[제목](링크)",
         section: 3
     },
     {
@@ -48,7 +48,7 @@ export const ToolbarListData = [
     },
     {
         img: I.Toolbar_Code,
-        content: "",
+        content: "\n```\n택스트\n```",
         section: 3
     },
 ]
