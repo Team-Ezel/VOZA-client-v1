@@ -1,4 +1,4 @@
-import API from '@/apis'
+import { APIFORM } from '@/apis'
 import { isAxiosError, Method } from 'axios'
 import { useCallback, useState } from 'react'
 
@@ -26,19 +26,17 @@ function useFetchFormdata<T>({
         async (body?: any) => {
             setIsLoading(true)
 
+            let formdata = new FormData();
+            formdata.append('file', body)
+
             try {
                 // 변경된 부분: form-data 요청으로 수정
-                const formData = new FormData();
-                formData.append("data", JSON.stringify(body)); // body를 JSON 문자열로 변환하여 추가
-
-                const { data } = await API({
+                const { data } = await APIFORM({
                     url,
                     method,
-                    data: formData, // FormData 객체 전달
+                    data: body, // FormData 객체 전달
                 });
-
                 setData(data);
-
                 if (successMessage) console.log(successMessage);
                 if (onSuccess) await onSuccess(data);
             } catch (e) {

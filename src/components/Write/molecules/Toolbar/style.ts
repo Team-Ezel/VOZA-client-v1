@@ -23,11 +23,14 @@ export const ToolbarSectionWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `
-export const ToolbarItemWrapper = styled.div`
+export const ToolbarItemWrapper = styled.label`
 display: flex;
     width: fit-content;
     height: fit-content;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+`
+export const ImageInput = styled.input`
+display: none;
 `

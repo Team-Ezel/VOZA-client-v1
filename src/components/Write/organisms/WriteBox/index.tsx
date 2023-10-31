@@ -1,6 +1,6 @@
 import Button from '@/components/Common/atoms/Button/Button'
 import Contents from '../../molecules/Contents'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import * as S from './style'
 import useFetch from '@/hooks/useFetch'
 import { useRouter } from 'next/router'
@@ -11,10 +11,10 @@ export default function WriteBox() {
   const [contents, setContents] = useState('')
   const router = useRouter()
   const { fetch, data, isLoading } = useFetch({
-    url: `group/${1}/board`,
+    url: `group/${router.query.id}/board`,
     method: "POST",
     onSuccess: () => {
-      router.back()
+      router.push(`/group/${router.query.id}`)
     }
   })
 

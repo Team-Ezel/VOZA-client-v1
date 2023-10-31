@@ -17,12 +17,12 @@ export type categoryPropsType = {
     setCategory: React.Dispatch<React.SetStateAction<string>>
 }
 
-export type contentsPropsType = {
+
+export interface ToolbarPropsType {
     contents: string
     setContents: React.Dispatch<React.SetStateAction<string>>
 }
-
-export interface ToolbarPropsType {
+export type contentsPropsType = {
     contents: string
     setContents: React.Dispatch<React.SetStateAction<string>>
 }
