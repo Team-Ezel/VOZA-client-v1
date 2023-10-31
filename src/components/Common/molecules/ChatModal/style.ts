@@ -4,7 +4,7 @@ export const ChatModalWrapper = styled.div`
   position: fixed;
   margin-top: 55px;
   margin-right: 25vw;
-  padding: 10px;
+  padding: 10px 0;
   width: 400px;
   border-radius: 0.75rem;
   background: #fff;

@@ -4,7 +4,9 @@ import { Add_outline } from '@/assets/svgs'
 import ChatGroupList from '../ChatGroupList'
 import useFetch from '@/hooks/useFetch'
 import { MygroupList, MygroupListData } from '@/types/components/common/ChatTypes'
+import ChatBox from '../ChatBox'
 const ChatModal = () => {
+  const [chatState, setChatState] = useState<number | null>(1);
   const { fetch, isLoading, data } = useFetch<MygroupList>({
     url: "/group/myGroups",
     method: "GET"
@@ -22,7 +24,7 @@ const ChatModal = () => {
         <Add_outline />
       </S.ChatModalHeader>
       <S.ChatContent>
-        <ChatGroupList data={data} />
+        {chatState ? <ChatBox id={chatState} chatState={chatState} setChatState={setChatState} /> : <ChatGroupList chatState={chatState} setChatState={setChatState} data={data} />}
       </S.ChatContent>
     </S.ChatModalWrapper>
   )
