@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import * as S from './style'
 import { Add_outline } from '@/assets/svgs'
-
+import ChatGroupList from '../ChatGroupList'
+import useFetch from '@/hooks/useFetch'
+import { MygroupList, MygroupListData } from '@/types/components/common/ChatTypes'
 const ChatModal = () => {
+  const { fetch, isLoading, data } = useFetch<MygroupList>({
+    url: "/group/myGroups",
+    method: "GET"
+  })
+
+  useEffect(() => {
+    fetch();
+  }, [fetch])
+
+
   return (
     <S.ChatModalWrapper>
       <S.ChatModalHeader>
@@ -10,7 +22,7 @@ const ChatModal = () => {
         <Add_outline />
       </S.ChatModalHeader>
       <S.ChatContent>
-        <p> 현재 사용할수 없는 기능입니다.</p>
+        <ChatGroupList data={data} />
       </S.ChatContent>
     </S.ChatModalWrapper>
   )
