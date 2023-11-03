@@ -30,6 +30,7 @@ export const TitleWrapper = styled.label`
 
 export const InformationWrapper = styled.div`
   font-size: 12px;
+  padding: 5px 10px;
   p {
     margin: 0;
     color: #999;
