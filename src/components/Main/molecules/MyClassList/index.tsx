@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 import * as S from './style'
 import { MyClassListPropsTypes } from '@/types/components/Main/MyClassType'
 import MyClassItem from '../../atoms/Item/MyClassItem'

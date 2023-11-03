@@ -1,6 +1,6 @@
 import * as S from './style'
 import { MyClassItemPropsTypes } from '@/types/components/Main/MyClassType'
-import * as I from '@/assets/svgs'
+import { useRouter } from 'next/router'
 function MyClassItem({
   id,
   title,
@@ -8,8 +8,9 @@ function MyClassItem({
   member,
   thumbnail,
 }: MyClassItemPropsTypes) {
+  const router = useRouter()
   return (
-    <S.MyClassItemWrapper>
+    <S.MyClassItemWrapper onClick={() => router.push(`/group/${id}`)}>
       <S.thumbnailWrapper>
         <img src={thumbnail} />
       </S.thumbnailWrapper>

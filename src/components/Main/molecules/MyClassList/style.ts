@@ -4,7 +4,7 @@ export const MyClassList = styled.div`
   display: flex;
   gap: 1rem 1.05rem;
   flex-wrap: wrap;
-  width: 970px;
+
   padding: 0 0 0 0;
   @media (max-width: 1634px) {
     // 노트북
@@ -22,6 +22,10 @@ export const MyClassList = styled.div`
 
   @media (max-width: 420px) {
     // 폰
+  }
+
+  @media (max-width: 1950px) {
+    width: 970px;
   }
 
   @media (min-width: 1950px) {
