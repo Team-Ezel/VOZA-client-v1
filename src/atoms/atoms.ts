@@ -26,8 +26,3 @@ export const calenderModal = atom({
   key: 'calenderModal',
   default: false,
 })
-
-export const boardIdAtom = atom({
-  key: 'boardIdAtom',
-  default: false,
-})
