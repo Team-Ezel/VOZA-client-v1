@@ -3,7 +3,11 @@ import * as S from './style'
 import { Ben, Timers } from '@/assets/svgs'
 import dynamic from 'next/dynamic'
 
-const MemberOptionModal = () => {
+type MemberOptionModalProps = {
+  memberId: number
+}
+
+const MemberOptionModal = ({ memberId }: MemberOptionModalProps) => {
   const [isAddAdminModalOpen, setAddAdminModalOpen] = useState(false)
   const [isMemberBenModalOpen, setMemberBenModalOpen] = useState(false)
   const [isMemberSuspensionModalOpen, setMemberSuspensionModalOpen] =
@@ -31,38 +35,44 @@ const MemberOptionModal = () => {
   )
 
   return (
-    <S.OptionModalWrapper>
+    <S.ModalContainer>
       <S.ModalOption onClick={() => setAddAdminModalOpen(true)}>
         관리자 권한 부여
       </S.ModalOption>
       <S.ModalOption onClick={() => setMemberSuspensionModalOpen(true)}>
         멤버 임시 정지
-        <S.SVGContainer>
+        <S.AssetsWrapper>
           <Timers />
-        </S.SVGContainer>
+        </S.AssetsWrapper>
       </S.ModalOption>
       <S.ModalOption
         onClick={() => setMemberBenModalOpen(true)}
         style={{ color: 'red' }}
       >
         멤버 내보내기
-        <S.SVGContainer>
+        <S.AssetsWrapper>
           <Ben />
-        </S.SVGContainer>
+        </S.AssetsWrapper>
       </S.ModalOption>
 
       {isAddAdminModalOpen && (
-        <AddAdminModal onClose={() => setAddAdminModalOpen(false)} />
+        <AddAdminModal
+          memberId={memberId}
+          onClose={() => setAddAdminModalOpen(false)}
+        />
       )}
       {isMemberBenModalOpen && (
-        <MemberBenModal onClose={() => setMemberBenModalOpen(false)} />
+        <MemberBenModal
+          memberId={memberId}
+          onClose={() => setMemberBenModalOpen(false)}
+        />
       )}
       {isMemberSuspensionModalOpen && (
         <MemberSuspensionModal
           onClose={() => setMemberSuspensionModalOpen(false)}
         />
       )}
-    </S.OptionModalWrapper>
+    </S.ModalContainer>
   )
 }
 

@@ -29,7 +29,7 @@ export const Main = styled.div`
   }
 `
 
-export const ModalWrapper = styled.div`
+export const ModalContainer = styled.div`
   width: 29.875rem;
   height: 35.9375rem;
   flex-shrink: 0;

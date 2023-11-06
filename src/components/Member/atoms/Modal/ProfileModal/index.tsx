@@ -45,7 +45,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ onClose }) => {
 
   return (
     <S.Main onClick={handleModalClick}>
-      <S.ModalWrapper>
+      <S.ModalContainer>
         <Default_profile width={100} height={100} />
         <S.Name>윤수용</S.Name>
         <S.Message>안녕하세요🤗 저는 윤수용입니다.</S.Message>
@@ -68,7 +68,7 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ onClose }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </S.ModalWrapper>
+      </S.ModalContainer>
     </S.Main>
   )
 }
