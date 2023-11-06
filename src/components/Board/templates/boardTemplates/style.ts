@@ -4,8 +4,8 @@ export const BoardTemplates = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #f7f8fa;
+  overflow-x: hidden;
 `
-
 export const BoardContents = styled.div`
   width: 100vw;
   display: flex;
@@ -18,3 +18,4 @@ export const BoardPostLists = styled.div`
   display: flex;
   flex-direction: column;
 `
+  

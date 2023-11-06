@@ -27,7 +27,7 @@ const MemberSuspensionModal: React.FC<MemberSuspensionModalProps> = ({
 
   return createPortal(
     <S.Main onClick={handleModalClick}>
-      <S.ModalWrapper>
+      <S.ModalContainer>
         <S.Title>멤버 임시정지</S.Title>
         <S.Subtitle>일정 시간동안 소모임에 들어올 수 없어요</S.Subtitle>
         <S.TimeTable>
@@ -50,7 +50,7 @@ const MemberSuspensionModal: React.FC<MemberSuspensionModalProps> = ({
         >
           임시정지
         </Button>
-      </S.ModalWrapper>
+      </S.ModalContainer>
     </S.Main>,
     document.body,
   )

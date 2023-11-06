@@ -1,15 +1,13 @@
-import React from 'react';
+import React from 'react'
 import * as S from './style'
 
 type InputProps = {
-    PlaceholderText : string
+  PlaceholderText: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
+const Input = ({ PlaceholderText, onChange }: InputProps) => {
+  return <S.Input placeholder={PlaceholderText} onChange={onChange} />
+}
 
-const Input = ({PlaceholderText} : InputProps) => {
-    return (
-        <S.Input placeholder={PlaceholderText} />      
-    );
-};
-
-export default Input;
+export default Input

@@ -55,3 +55,7 @@ export const WriteModalOption = styled.div`
     margin-left: 2em;
   }
 `
+
+export const RightArrowSvg = styled.div`
+  margin-left: auto;
+`

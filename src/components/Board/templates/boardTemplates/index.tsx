@@ -4,17 +4,78 @@ import * as S from './style'
 import BoardInfo from '../../molecules/BoardInfo'
 import { BoardInfoType } from '@/types/components/board/BoardInfoType'
 import PostList from '../../molecules/PostList'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import WriteModal from '../../atoms/modal/WriteModal'
 import { useRecoilValue } from 'recoil'
 import { boardModalAtom } from '@/atoms/atoms'
+import { useRouter } from 'next/router'
+import API from '@/apis'
+import { BoardPostType } from '@/types/components/board/BoardPostType'
+import { BoardVoteType } from '@/types/components/board/BoardVoteType'
 
 const BoardTemplates = () => {
   const modalState = useRecoilValue(boardModalAtom)
+  const params = useRouter().query.id
 
-  useEffect(() => {
-    console.log(modalState)
-  }, [modalState])
+  const [boardPostData, setBoardPostData] = useState<Object>({ postlists: [] })
+  const [boardVoteData, setBoardVoteData] = useState<Object>({ postlists: [] })
+  const [groupData, setGroupData] = useState<BoardInfoType>({
+    imageUrl: '',
+    boardName: '',
+    boardDesc: '',
+  })
+
+  const getGroupData = async () => {
+    const _groupResponse: BoardInfoType = await API({
+      url: `/group/myGroups`,
+      method: 'get',
+    })
+    setGroupData(_groupResponse)
+  }
+
+  const getPostData = async () => {
+    const _postResponse: BoardPostType[] = await API({
+      url: `/group/${params}/vote`,
+      method: 'get',
+    })
+    setPostResList(_postResponse)
+  }
+
+  const getVoteData = async () => {
+    const _voteResponse: BoardVoteType[] = await API({
+      url: `/group/${params}/board`,
+      method: 'get',
+    })
+    setVoteResList(_voteResponse)
+  }
+
+  const setPostResList = (res: BoardPostType[] | BoardVoteType[]) => {
+    res.map((data: BoardPostType | BoardVoteType) => {
+      setBoardPostData((prevState: BoardPostType[] | BoardVoteType[]) => {
+        return {
+          postlists: [...prevState, data],
+        }
+      })
+    })
+  }
+
+  const setVoteResList = (res: BoardVoteType[]) => {
+    res.map((data: BoardVoteType) => {
+      setBoardVoteData((prevState: BoardVoteType[]) => {
+        return {
+          postlists: [...prevState, data],
+        }
+      })
+    })
+  }
+
+  // useEffect(() => {
+  //   if (params != undefined) {
+  //     getGroupData()
+  //     getPostData()
+  //     getVoteData()
+  //   }
+  // }, [params])
 
   const dummyInfoData: BoardInfoType = {
     imageUrl:
@@ -170,8 +231,10 @@ const BoardTemplates = () => {
         <Header />
         <BoardHeader />
         <S.BoardContents>
-          <BoardInfo {...dummyInfoData} />
+          <BoardInfo /*{...groupData}*/ {...dummyInfoData} />
           <S.BoardPostLists>
+            {/* <PostList props={boardPostData} listType={'게시글'} />
+            <PostList props={boardVoteData} listType={'투표글'} /> */}
             <PostList props={dummyPostListData} listType={'게시글'} />
             <PostList props={dummyVoteListData} listType={'투표글'} />
           </S.BoardPostLists>

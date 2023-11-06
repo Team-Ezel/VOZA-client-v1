@@ -20,6 +20,12 @@ export const MemberProfile = styled.div`
   cursor: pointer;
 `
 
+export const MemeberProfileImg = styled.div`
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+`
+
 export const MemberName = styled.span`
   margin-left: 15px;
   color: #000;
@@ -30,5 +36,4 @@ export const MemberName = styled.span`
   line-height: normal;
 `
 
-export const MemberSetting = styled.div`
-`
+export const MemberSetting = styled.div``

@@ -4,6 +4,7 @@ import { boardModalAtom } from '@/atoms/atoms'
 import NoPostSvg from '@/assets/svgs/NoPostSvg'
 import NoVoteSvg from '@/assets/svgs/NoVoteSvg'
 import { Arrow_down } from '@/assets/svgs'
+import RightArrow from '@/assets/svgs/Right_arrow'
 
 const WriteModal = () => {
   const [modalState, setModalState] = useRecoilState(boardModalAtom)
@@ -20,10 +21,17 @@ const WriteModal = () => {
         <S.WriteModalOption>
           <NoPostSvg />
           <div>게시글 작성</div>
+          <S.RightArrowSvg>
+            <RightArrow />
+          </S.RightArrowSvg>
         </S.WriteModalOption>
+        3
         <S.WriteModalOption>
           <NoVoteSvg />
           <div>투표글 작성</div>
+          <S.RightArrowSvg>
+            <RightArrow />
+          </S.RightArrowSvg>
         </S.WriteModalOption>
       </S.WriteModal>
     </S.ModalWrapper>
