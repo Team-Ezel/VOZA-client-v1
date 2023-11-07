@@ -6,6 +6,7 @@ import NewClassModal from '@/components/Main/organisms/NewClassModal'
 function MyClass() {
   return (
     <S.MyClassWrapper>
+      <NewClassModal />
       <MyClassList />
     </S.MyClassWrapper>
   )

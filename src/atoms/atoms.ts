@@ -8,7 +8,6 @@ export const newClassModal = atom<NewClassModalStateType>({
   key: 'NewClassModal',
   default: {
     modal: false,
-
     page: 'category',
   },
 })
