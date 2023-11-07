@@ -6,6 +6,8 @@ import ScheduleOptionItem from '../../atoms/ScheduleOptionItem'
 import Button from '@/components/Common/atoms/Button/Button'
 import DateInputList from '../../molecules/DateInputList'
 import { useState } from 'react'
+import useFetch from '@/hooks/useFetch'
+import { useRouter } from 'next/router'
 
 export default function CalenderModal() {
   const [ModalState, setModalState] = useRecoilState(calenderModal)
@@ -13,8 +15,19 @@ export default function CalenderModal() {
   const [content, setContent] = useState<string>('')
   const [startDate, setStartDate] = useState<string>('')
   const [endDate, setEndDate] = useState<string>('')
+  const router = useRouter()
+  const { data, isLoading, fetch } = useFetch({
+    url: `/group/${router.query.id}/calender`,
+    method: 'POST',
+  })
   const Upload = () => {
     setModalState(false)
+    fetch({
+      title: title,
+      content: content,
+      startDate: startDate,
+      endDate: endDate,
+    })
   }
   return (
     <>
