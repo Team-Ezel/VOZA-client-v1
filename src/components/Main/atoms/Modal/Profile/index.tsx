@@ -33,15 +33,7 @@ function Profile() {
   const handleClick = () => {
     let formData = new FormData()
     formData.append('data', JSON.stringify({ ...newclassState }))
-    formData.append('file', imgFile)
-    for (let key of formData.keys()) {
-      console.log(key)
-    }
-
-    /* value 확인하기 */
-    for (let value of formData.values()) {
-      console.log(value)
-    }
+    formData.append('file', { imgFile })
     fetch(formData)
 
     setNewClassModalState({
@@ -54,9 +46,7 @@ function Profile() {
   return (
     <S.ClassProfileWrapper>
       <S.ProfileWrapper>
-        <S.Profile>
-          <img src={imgFile || ''} alt='' />
-        </S.Profile>
+        <S.Profile>{imgFile ? <img src={imgFile} alt='' /> : null}</S.Profile>
         <S.ProfileButtonWrapper>
           <S.AddProfileButton htmlFor='file'>
             <I.Camera />
