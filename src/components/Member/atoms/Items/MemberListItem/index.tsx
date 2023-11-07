@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
 import * as S from './style'
-import { Default_profile, Settings } from '@/assets/svgs'
+import { Settings } from '@/assets/svgs'
 import MemberOptionModal from '../../Modal/MemberOptionModal'
 import ProfileModal from '../../Modal/ProfileModal'
 
 type MemberListItemProps = {
   name: string
   memberId: number
+  profileURL: string
 }
 
-const MemberListItem = ({ name, memberId }: MemberListItemProps) => {
+const MemberListItem = ({
+  name,
+  memberId,
+  profileURL,
+}: MemberListItemProps) => {
   const [isModalVisible, setModalVisible] = useState(false)
   const [isProfileModalVisible, setProfileModalVisible] = useState(false)
 
@@ -24,8 +29,7 @@ const MemberListItem = ({ name, memberId }: MemberListItemProps) => {
   return (
     <S.MemberItemContainer>
       <S.MemberProfile onClick={toggleProfileModal}>
-        {/* <Default_profile width={38} height={38} /> */}
-        <S.MemeberProfileImg /> { /* 백엔드 수정이후 백그라운드 만들어야함 */ }
+        <S.MemeberProfileImg ProfileImgURL={ profileURL || ''} />{' '}
         <S.MemberName>{name}</S.MemberName>
       </S.MemberProfile>
       <S.MemberSetting>

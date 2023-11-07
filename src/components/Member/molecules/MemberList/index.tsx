@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 interface Member {
   name: string
   id: number
+  profileUrl: string
 }
 
 const MemberList: React.FC = () => {
@@ -33,6 +34,7 @@ const MemberList: React.FC = () => {
         },
       )
       setMemberList(response.data.memberResponses)
+
     } catch (error) {
       console.error(error)
     }
@@ -52,6 +54,7 @@ const MemberList: React.FC = () => {
           key={member.id}
           name={member.name}
           memberId={member.id}
+          profileURL={member.profileUrl}
         />
       ))}
     </S.MemberListContainer>
