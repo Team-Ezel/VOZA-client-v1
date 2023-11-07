@@ -6,9 +6,10 @@ import ProfileModal from '../../Modal/ProfileModal'
 
 type MemberListItemProps = {
   name: string
+  memberId: number
 }
 
-const MemberListItem = ({ name }: MemberListItemProps) => {
+const MemberListItem = ({ name, memberId }: MemberListItemProps) => {
   const [isModalVisible, setModalVisible] = useState(false)
   const [isProfileModalVisible, setProfileModalVisible] = useState(false)
 
@@ -23,14 +24,15 @@ const MemberListItem = ({ name }: MemberListItemProps) => {
   return (
     <S.MemberItemContainer>
       <S.MemberProfile onClick={toggleProfileModal}>
-        <Default_profile width={38} height={38} />
+        {/* <Default_profile width={38} height={38} /> */}
+        <S.MemeberProfileImg /> { /* 백엔드 수정이후 백그라운드 만들어야함 */ }
         <S.MemberName>{name}</S.MemberName>
       </S.MemberProfile>
       <S.MemberSetting>
         <div onClick={toggleModal}>
           <Settings />
         </div>
-        {isModalVisible && <MemberOptionModal />}
+        {isModalVisible && <MemberOptionModal memberId={memberId} />}
       </S.MemberSetting>
       {isProfileModalVisible && <ProfileModal onClose={toggleProfileModal} />}
     </S.MemberItemContainer>

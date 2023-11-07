@@ -1,6 +1,6 @@
 import * as S from './style'
 import { BoardHeaderListData } from '@/assets/data/BoardHeaderListData'
-import BoardHeaderItem from '../../molecules/boardHeaderItem'
+import BoardHeaderItem from '../../molecules/BoardHeaderItem'
 
 const BoardHeader = () => {
   return (
