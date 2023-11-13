@@ -7,7 +7,7 @@ export const MyClassItemWrapper = styled.div`
   height: 212px;
   width: 180px;
   overflow: hidden;
-  :hover{
+  :hover {
     transform: translateY(-1%);
   }
 `
@@ -15,6 +15,7 @@ export const MyClassItemWrapper = styled.div`
 export const thumbnailWrapper = styled.div`
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
   height: 64%;
@@ -29,6 +30,7 @@ export const TitleWrapper = styled.label`
 
 export const InformationWrapper = styled.div`
   font-size: 12px;
+  padding: 5px 10px;
   p {
     margin: 0;
     color: #999;

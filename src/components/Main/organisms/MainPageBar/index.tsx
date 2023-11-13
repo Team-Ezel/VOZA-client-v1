@@ -1,12 +1,12 @@
-import MainPageBarList from "../../molecules/MainPageBarList";
-import * as S from "./style";
+import MainPageBarList from '../../molecules/MainPageBarList'
+import * as S from './style'
 
-function MainPageBar(){
-    return(
-        <S.MainPageBarWrapper>
-            <MainPageBarList/>
-        </S.MainPageBarWrapper>
-    )
+function MainPageBar() {
+  return (
+    <S.MainPageBarWrapper>
+      <MainPageBarList />
+    </S.MainPageBarWrapper>
+  )
 }
 
-export default MainPageBar;
+export default MainPageBar
