@@ -3,6 +3,7 @@ import * as S from './style'
 import MemberListItem from '../../atoms/Items/MemberListItem'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { Ben } from '@/assets/svgs'
 
 interface Member {
   name: string
@@ -34,7 +35,6 @@ const MemberList: React.FC = () => {
         },
       )
       setMemberList(response.data.memberResponses)
-
     } catch (error) {
       console.error(error)
     }
@@ -49,6 +49,9 @@ const MemberList: React.FC = () => {
   return (
     <S.MemberListContainer>
       <S.Title>멤버</S.Title>
+      <S.InviteText>
+        <p>멤버 초대하기</p>
+      </S.InviteText>
       {memberList.map((member) => (
         <MemberListItem
           key={member.id}
@@ -57,6 +60,9 @@ const MemberList: React.FC = () => {
           profileURL={member.profileUrl}
         />
       ))}
+      <S.LeaveGroup>
+        <Ben /> 그룹탈퇴하기
+      </S.LeaveGroup>
     </S.MemberListContainer>
   )
 }

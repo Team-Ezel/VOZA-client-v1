@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 
 export const CategoriesBlock = styled.div`
-  position: fixed;
+  position: sticky;
   width: 100%;
   height: 45px;
   top: 55px;
