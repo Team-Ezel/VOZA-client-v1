@@ -4,6 +4,7 @@ import MemberListItem from '../../atoms/Items/MemberListItem'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { Ben } from '@/assets/svgs'
+import LeaveGroupModal from '../../atoms/Modal/LeaveGroupModal'
 
 interface Member {
   name: string
@@ -16,6 +17,7 @@ const MemberList: React.FC = () => {
   const router = useRouter()
   const { id } = router.query
   const [memberList, setMemberList] = useState<Member[]>([])
+  const [isModalVisible, setModalVisible] = useState<boolean>(false)
 
   const fetchData = async () => {
     try {
@@ -60,9 +62,16 @@ const MemberList: React.FC = () => {
           profileURL={member.profileUrl}
         />
       ))}
-      <S.LeaveGroup>
+      <S.LeaveGroup
+        onClick={() => {
+          setModalVisible(true)
+        }}
+      >
         <Ben /> 그룹탈퇴하기
       </S.LeaveGroup>
+      {isModalVisible && (
+        <LeaveGroupModal memberId={1} onClose={() => setModalVisible(false)} />
+      )}
     </S.MemberListContainer>
   )
 }
