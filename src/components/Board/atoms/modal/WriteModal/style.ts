@@ -13,6 +13,13 @@ export const ModalWrapper = styled.div`
   top: 0px;
   left: 0px;
   overflow-y: hidden;
+
+  a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const WriteModal = styled.div`

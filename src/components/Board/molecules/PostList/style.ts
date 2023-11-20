@@ -5,7 +5,6 @@ export const PostList = styled.div`
   font-size: 24px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   height: 620px;
 `
 export const ListType = styled.div`
@@ -22,6 +21,8 @@ export const NoPostFlex = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 10em;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
 `
 
 export const NoPostTitle = styled.div`

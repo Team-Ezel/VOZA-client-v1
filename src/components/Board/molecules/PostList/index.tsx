@@ -11,7 +11,7 @@ interface propsInterface {
 }
 
 const PostList = ({ props, listType }: propsInterface) => {
-  const postlists = props.postlists
+  const postlists = props.postlists.slice(-10)
 
   return (
     <S.PostList>
@@ -31,9 +31,9 @@ const PostList = ({ props, listType }: propsInterface) => {
       ) : (
         <S.NoPostFlex>
           <NoVoteSvg />
-          <S.NoPostTitle>게시글이 존재하지 않아요..</S.NoPostTitle>
+          <S.NoPostTitle>투표글이 존재하지 않아요..</S.NoPostTitle>
           <S.NoPostContent>
-            첫번째로 게시글을 써보는건 어떤가요?
+            첫번째로 투표글을 써보는건 어떤가요?
           </S.NoPostContent>
         </S.NoPostFlex>
       )}

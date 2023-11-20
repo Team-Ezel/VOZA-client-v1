@@ -4,16 +4,24 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const BoardPostItem = (props: BoardPostType) => {
-  const createdDate = props.createdDate.toString()
   const params = useRouter().query.id
+  console.log(props.boardType)
+  const createdDate = props.createdDate.substring(0, 10)
 
   return (
     <S.BoardPostItem>
       <div>
-        <Link href={`/board/${params}/post/${props.id}`} className='post-title'>
+        <Link
+          href={`/board/${params}/post/${props.boardId}`}
+          className='post-title'
+        >
           {props.title}
         </Link>
-        {props.boardType ? <S.boardType>{props.boardType}</S.boardType> : null}
+        {props.boardType ? (
+          <S.boardType>
+            {props.boardType === 'NORMAL' ? '일반' : '공지'}
+          </S.boardType>
+        ) : null}
       </div>
       <S.postInfo>
         <div className='author'>{props.author}</div>
