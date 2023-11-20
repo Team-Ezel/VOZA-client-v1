@@ -1,12 +1,15 @@
+import { PostType } from '@/types/components/post/PostType'
 import * as S from './style'
 
-const PostInfo = () => {
+const PostInfo = (props: PostType) => {
   return (
     <S.PostInfo>
-      <S.PostTitle>오늘의 고양이 사진쓰~~</S.PostTitle>
+      <S.PostTitle>{props.title}</S.PostTitle>
       <S.PostInfoOrganism>
-        <S.PostInfoContent>김민재</S.PostInfoContent>
-        <S.PostInfoContent>작성일 : 2023-10-23</S.PostInfoContent>
+        <S.PostInfoContent>{props.author}</S.PostInfoContent>
+        <S.PostInfoContent>
+          작성일 : {props.createdDate.substring(0, 10)}
+        </S.PostInfoContent>
       </S.PostInfoOrganism>
     </S.PostInfo>
   )
