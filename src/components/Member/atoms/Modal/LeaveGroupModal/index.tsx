@@ -6,12 +6,10 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 
 type LeaveGroupModalProps = {
-  memberId: number
   onClose: () => void
 }
 
 const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({
-  memberId,
   onClose,
 }) => {
   const baseurl = process.env.NEXT_PUBLIC_BASEURL
