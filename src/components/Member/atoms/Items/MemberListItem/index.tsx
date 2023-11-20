@@ -29,7 +29,7 @@ const MemberListItem = ({
   return (
     <S.MemberItemContainer>
       <S.MemberProfile onClick={toggleProfileModal}>
-        <S.MemeberProfileImg ProfileImgURL={ profileURL || ''} />{' '}
+        <S.MemeberProfileImg ProfileImgURL={profileURL || ''} />{' '}
         <S.MemberName>{name}</S.MemberName>
       </S.MemberProfile>
       <S.MemberSetting>
@@ -38,7 +38,14 @@ const MemberListItem = ({
         </div>
         {isModalVisible && <MemberOptionModal memberId={memberId} />}
       </S.MemberSetting>
-      {isProfileModalVisible && <ProfileModal onClose={toggleProfileModal} />}
+      {isProfileModalVisible && (
+        <ProfileModal
+          onClose={toggleProfileModal}
+          memberId={memberId}
+          nickname={name}
+          profileUrl={profileURL}
+        />
+      )}
     </S.MemberItemContainer>
   )
 }

@@ -1,3 +1,4 @@
+import { ProfileURLPropsType } from '@/types/components/common/ProfileURLPropsType'
 import styled from '@emotion/styled'
 
 export const Main = styled.div`
@@ -54,17 +55,6 @@ export const Name = styled.div`
   padding-top: 20px;
 `
 
-export const Message = styled.div`
-  color: #000;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 0.9375rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  padding-top: 20px;
-`
-
 export const ProfileGroupText = styled.div`
   color: #000;
   font-family: Pretendard;
@@ -75,4 +65,15 @@ export const ProfileGroupText = styled.div`
 
   margin-top: 60px;
   margin-bottom: 30px;
+`
+
+
+export const MemeberProfileImg = styled.div<ProfileURLPropsType>`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url(${(props) => props.ProfileImgURL});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
