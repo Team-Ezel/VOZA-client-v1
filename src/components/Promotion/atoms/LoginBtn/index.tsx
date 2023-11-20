@@ -3,11 +3,13 @@ import * as S from './style'
 import { useRouter } from 'next/router'
 import TokenManager, { TokensType } from '@/apis/TokenManager'
 import axios from 'axios'
+import { useLoginCheck } from '@/hooks/useLoginCheck'
 
 const LoginBtn = () => {
   const baseurl = process.env.NEXT_PUBLIC_BASEURL
   const router = useRouter()
   const param = router.query.code
+  const loginCheck = useLoginCheck()
 
   const loginRedirect = () => {
     window.location.href = '/login'
@@ -16,6 +18,10 @@ const LoginBtn = () => {
   useEffect(() => {
     if (param != undefined) {
       login()
+    } else {
+      if (loginCheck) {
+        router.replace('/main')
+      }
     }
   }, [param])
 
