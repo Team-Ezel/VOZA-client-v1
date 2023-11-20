@@ -5,7 +5,7 @@ export const BoardPostItem = styled.div`
   width: 500px;
   background-color: #fff;
   margin-bottom: 20px;
-  height: 5rem;
+  height: 5.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,12 +14,17 @@ export const BoardPostItem = styled.div`
   padding-top: 1em;
   border-radius: 5px;
   font-weight: 500;
+  margin-right: 10px;
 
   .post-title {
     font-size: 18px;
     text-decoration: none;
     color: #000;
     cursor: pointer;
+  }
+
+  .createdDate {
+    width: 10em;
   }
 `
 

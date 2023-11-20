@@ -3,11 +3,13 @@ import * as S from './style'
 import { boardModalAtom } from '@/atoms/atoms'
 import NoPostSvg from '@/assets/svgs/NoPostSvg'
 import NoVoteSvg from '@/assets/svgs/NoVoteSvg'
-import { Arrow_down } from '@/assets/svgs'
 import RightArrow from '@/assets/svgs/Right_arrow'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const WriteModal = () => {
   const [modalState, setModalState] = useRecoilState(boardModalAtom)
+  const params = useRouter().query.id
 
   const onClick = () => {
     setModalState(!modalState)
@@ -19,19 +21,23 @@ const WriteModal = () => {
         <S.WriteModalTitle>글쓰기</S.WriteModalTitle>
         <S.WriteModalText>어떤 글을 작성하실 건가요?</S.WriteModalText>
         <S.WriteModalOption>
-          <NoPostSvg />
-          <div>게시글 작성</div>
-          <S.RightArrowSvg>
-            <RightArrow />
-          </S.RightArrowSvg>
+          <Link href={`/group/${params}/postWrite`}>
+            <NoPostSvg />
+            <div>게시글 작성</div>
+            <S.RightArrowSvg>
+              <RightArrow />
+            </S.RightArrowSvg>
+          </Link>
         </S.WriteModalOption>
-        3
+
         <S.WriteModalOption>
-          <NoVoteSvg />
-          <div>투표글 작성</div>
-          <S.RightArrowSvg>
-            <RightArrow />
-          </S.RightArrowSvg>
+          <Link href={`/group/${params}/voteWrite`}>
+            <NoVoteSvg />
+            <div>투표글 작성</div>
+            <S.RightArrowSvg>
+              <RightArrow />
+            </S.RightArrowSvg>
+          </Link>
         </S.WriteModalOption>
       </S.WriteModal>
     </S.ModalWrapper>
