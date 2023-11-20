@@ -36,7 +36,7 @@ export const InviteText = styled.div`
   margin-right: 40px;
   margin-top: 40px;
 
-  p {
+  span {
     cursor: pointer;
   }
 `

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { Ben } from '@/assets/svgs'
 import LeaveGroupModal from '../../atoms/Modal/LeaveGroupModal'
+import GroupCodeModal from '../../atoms/Modal/GroupCodeModal'
 
 interface Member {
   name: string
@@ -18,6 +19,7 @@ const MemberList: React.FC = () => {
   const { id } = router.query
   const [memberList, setMemberList] = useState<Member[]>([])
   const [isModalVisible, setModalVisible] = useState<boolean>(false)
+  const [isCodeModalVisible, setCodeModalVisible] = useState<Boolean>(false)
 
   const fetchData = async () => {
     try {
@@ -52,7 +54,13 @@ const MemberList: React.FC = () => {
     <S.MemberListContainer>
       <S.Title>멤버</S.Title>
       <S.InviteText>
-        <p>멤버 초대하기</p>
+        <span
+          onClick={() => {
+            setCodeModalVisible(true)
+          }}
+        >
+          멤버 초대하기
+        </span>
       </S.InviteText>
       {memberList.map((member) => (
         <MemberListItem
@@ -69,8 +77,12 @@ const MemberList: React.FC = () => {
       >
         <Ben /> 그룹탈퇴하기
       </S.LeaveGroup>
+
       {isModalVisible && (
-        <LeaveGroupModal memberId={1} onClose={() => setModalVisible(false)} />
+        <LeaveGroupModal onClose={() => setModalVisible(false)} />
+      )}
+      {isCodeModalVisible && (
+        <GroupCodeModal onClose={() => setCodeModalVisible(false)} />
       )}
     </S.MemberListContainer>
   )
