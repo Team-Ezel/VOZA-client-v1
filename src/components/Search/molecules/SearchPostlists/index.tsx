@@ -1,4 +1,4 @@
-import BoardPostItem from '@/components/Board/atoms/BoardPostItem'
+import BoardPostItem from '@/components/Board/atoms/item/BoardPostItem'
 import { BoardPostType } from '@/types/components/board/BoardPostType'
 import { useEffect } from 'react'
 import * as S from './style'

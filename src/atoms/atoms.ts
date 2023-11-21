@@ -1,24 +1,14 @@
 import { atom } from 'recoil'
-import {
-  NewClassModalStateType,
-  NewClassModalState,
-} from '@/types/components/common/NewClassModal'
+import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
 
 export const newClassModal = atom<NewClassModalStateType>({
   key: 'NewClassModal',
   default: {
     modal: false,
     page: 'category',
-  },
-})
-
-export const newClassState = atom<NewClassModalState>({
-  key: 'newClassState',
-  default: {
-    groupName: '',
-    introduceGroup: '',
-    region: '',
-    tags: [],
+    category: [],
+    name: '',
+    profile: null,
   },
 })
 
@@ -26,7 +16,18 @@ export const otherClassFilter = atom({
   key: 'otherClassFilter',
   default: 'all',
 })
+
+export const boardModalAtom = atom({
+  key: 'boardModalAtom',
+  default: false,
+})
+
 export const calenderModal = atom({
   key: 'calenderModal',
+  default: false,
+})
+
+export const boardIdAtom = atom({
+  key: 'boardIdAtom',
   default: false,
 })
