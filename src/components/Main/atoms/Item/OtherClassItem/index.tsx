@@ -1,23 +1,21 @@
 import * as S from './style'
 import { OtherClassItemTypes } from '@/types/components/Main/OtherClassTypes'
 function OtherClassItem({
-  id,
-  title,
-  introduction,
-  thumbnail,
+  groupId,
+  groupName,
+  url,
   tags,
 }: OtherClassItemTypes) {
-  const tag = tags.split(' ')
   return (
     <S.OtherClassItemWrapper>
       <S.thumbnailWrapper>
-        <img src={thumbnail} alt='이미지' />
+        <img src={url} alt='이미지' />
       </S.thumbnailWrapper>
       <S.InformationWrapper>
-        <S.TitleWrapper>{title}</S.TitleWrapper>
-        <p>{introduction}</p>
+        <S.TitleWrapper>{groupName}</S.TitleWrapper>
+        <p>{''}</p>
         <S.TagsLIstWrapper>
-          {tag.map((item) => (
+          {tags.map((item) => (
             <S.TagsItemWrapper key={item}>{item}</S.TagsItemWrapper>
           ))}
         </S.TagsLIstWrapper>

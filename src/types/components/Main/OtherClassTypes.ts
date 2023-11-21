@@ -1,16 +1,21 @@
 export type OtherClassItemTypes = {
-    id: number
-    title: string
-    thumbnail: string
-    introduction: string
-    tags:string
-  }
-  
-  export type OtherClassListPropsTypes = {
-    otherClassList: OtherClassItemTypes[]
-  }
+  groupId: number
+  groupName: string
+  url: string
+  leaderName: string
+  members: number
+  tags: string[]
+}
 
-  export type OtherClassFIlterItemPropsTypes = {
-    name: string
-    value:string
-  }
+export type groupListType = {
+  groupList: OtherClassItemTypes[]
+}
+
+export type OtherClassListPropsTypes = {
+  content: groupListType[]
+}
+
+export type OtherClassFIlterItemPropsTypes = {
+  name: string
+  value: string
+}
