@@ -8,20 +8,18 @@ import useFetch from '@/hooks/useFetch'
 interface ProfileProps {
   clicked: boolean
   setClicked: React.Dispatch<React.SetStateAction<boolean>>
+  data: {
+    profileUrl?: string
+  } | null
+  isLoading: boolean
 }
 
-const Profile: React.FC<ProfileProps> = ({ clicked, setClicked }) => {
-  const baseurl: string | undefined = process.env.NEXT_PUBLIC_BASEURL
-
-  const { isLoading, fetch, data } = useFetch<{ profileUrl: string }>({
-    url: `${baseurl}/user/profile`,
-    method: 'GET',
-  })
-
-  useEffect(() => {
-    fetch()
-  }, [])
-
+const Profile: React.FC<ProfileProps> = ({
+  clicked,
+  setClicked,
+  isLoading,
+  data,
+}) => {
   return (
     <S.ProfileWrapper>
       {isLoading ? (
