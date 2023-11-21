@@ -3,17 +3,19 @@ import { RecommendClassListType } from '@/types/components/Main/RecommendClassTy
 import * as S from './style'
 import RecommendClassItem from '../../atoms/Item/RecommendClassItem'
 
-function RecommendClassList({ RecommendClassList }: RecommendClassListType) {
-  const [datas, setDatas] = useState(RecommendClassList)
+function RecommendClassList({ groupList }: RecommendClassListType) {
   return (
     <S.RecommendClassListWrapper>
-      {datas.map((data) => (
+      {groupList.map((data) => (
         <RecommendClassItem
-          id={data.id}
-          title={data.title}
-          introduction={data.introduction}
-          thumbnail={data.thumbnail}
-          key={data.id}
+          groupId={data.groupId}
+          groupName={data.groupName}
+          // introduction={data.introduction}
+          url={data.url}
+          key={data.groupId}
+          members={data.members}
+          tags={data.tags}
+          leaderName={data.leaderName}
         />
       ))}
     </S.RecommendClassListWrapper>

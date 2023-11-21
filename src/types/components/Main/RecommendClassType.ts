@@ -1,11 +1,12 @@
 export type RecommendClassItemType = {
-  id: number
-  title: string
-  introduction: string
-  thumbnail:string
+  groupId: number
+  groupName: string
+  url: string
+  leaderName: string
+  members: number
+  tags: string[]
 }
 
 export type RecommendClassListType = {
-  RecommendClassList: RecommendClassItemType[]
+  groupList: RecommendClassItemType[]
 }
-

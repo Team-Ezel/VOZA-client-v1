@@ -8,15 +8,11 @@ export type OtherClassItemTypes = {
 }
 
 export type groupListType = {
-  groupList: OtherClassItemTypes
+  groupList: OtherClassItemTypes[]
 }
 
 export type OtherClassListPropsTypes = {
   content: groupListType[]
-}
-
-export type OtherClassListDataType = {
-  content: OtherClassListPropsTypes
 }
 
 export type OtherClassFIlterItemPropsTypes = {
