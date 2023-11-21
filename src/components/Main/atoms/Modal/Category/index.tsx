@@ -26,6 +26,7 @@ function Category() {
                 setCategory([...category.filter((item) => item !== i.value)])
               }
             }}
+            key={i.value}
           >
             {i.name}
           </S.CategoryItemWrapper>
@@ -33,7 +34,6 @@ function Category() {
       </S.CategoryListWrapper>
       {/* <NewClassModalButton children="다음" backgroundColor="#F2F2F4" color="#FFFFFF"/> */}
       <Button
-        children='다음'
         width='100%'
         height='3rem'
         borderRadius='5px'
@@ -43,11 +43,16 @@ function Category() {
         fontSize='18px'
         onClick={() => {
           if (categorySelect) {
-            setNewClassModalState({ ...NewClassModalState, category: category })
-            setNewClassModalState({ ...NewClassModalState, page: 'name' })
+            setNewClassModalState({
+              ...NewClassModalState,
+              category: category,
+              page: 'name',
+            })
           }
         }}
-      />
+      >
+        다음
+      </Button>
     </S.CategoryWrapper>
   )
 }

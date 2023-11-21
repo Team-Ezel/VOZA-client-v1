@@ -1,17 +1,17 @@
 import Button from '@/components/Common/atoms/Button/Button'
 import { useRecoilState } from 'recoil'
-import { newClassModal, newClassState } from '@/atoms/atoms'
+import { newClassModal } from '@/atoms/atoms'
 import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
 import * as S from './style'
 import * as I from '@/assets/svgs'
-import { useRef, useState } from 'react'
+import { useRef, useState, ChangeEvent } from 'react'
 import useFetchFormdata from '@/hooks/useFetchFormdata'
+import { blob } from 'stream/consumers'
 
 function Profile() {
   const [NewClassModalState, setNewClassModalState] =
     useRecoilState<NewClassModalStateType>(newClassModal)
-  const [newclassState, setNewclassState] = useRecoilState(newClassState)
-  const [imgFile, setImgFile] = useState<string | ArrayBuffer | null>('') // 초기 상태는 빈 문자열 또는 ArrayBuffer로 설정
+  const [file, setFile] = useState<File | undefined>(undefined)
   const imgRef = useRef<HTMLInputElement | null>(null) // useRef에 타입 추가
 
   const { isLoading, fetch } = useFetchFormdata({
@@ -19,21 +19,36 @@ function Profile() {
     method: 'post',
   })
 
-  const handleUpload = () => {
-    if (imgRef.current && imgRef.current.files && imgRef.current.files[0]) {
-      const file = imgRef.current.files[0]
-      const reader = new FileReader()
-      reader.readAsDataURL(file)
-      reader.onloadend = () => {
-        setImgFile(reader.result)
-      }
-    }
+  const handleUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.currentTarget.files?.item(0)
+    if (selectedFile !== null) setFile(selectedFile)
   }
 
   const handleClick = () => {
-    let formData = new FormData()
-    formData.append('data', JSON.stringify({ ...newclassState }))
-    formData.append('file', { imgFile })
+    const formData = new FormData()
+    if (file) {
+      const imageFile = new File([file], 'noticeImage.png', {
+        type: 'image/png',
+      })
+      formData.append('file', imageFile)
+    } else {
+      return
+    }
+    formData.append(
+      'data',
+      new Blob(
+        [
+          JSON.stringify({
+            groupName: NewClassModalState.name,
+            introduceGroup: 'This is a test group1',
+            region: 'Test Region',
+            tags: NewClassModalState.category,
+          }),
+        ],
+        { type: 'application/json' },
+      ),
+    )
+    console.log(NewClassModalState)
     fetch(formData)
 
     setNewClassModalState({
@@ -46,14 +61,16 @@ function Profile() {
   return (
     <S.ClassProfileWrapper>
       <S.ProfileWrapper>
-        <S.Profile>{imgFile ? <img src={imgFile} alt='' /> : null}</S.Profile>
+        <S.Profile>
+          {file ? <img src={URL.createObjectURL(file)} alt='' /> : null}
+        </S.Profile>
         <S.ProfileButtonWrapper>
           <S.AddProfileButton htmlFor='file'>
             <I.Camera />
             <p>사진추가</p>
           </S.AddProfileButton>
           <input
-            accept='file/*'
+            accept='image/png, image/jpeg'
             multiple
             type='file'
             id='file'

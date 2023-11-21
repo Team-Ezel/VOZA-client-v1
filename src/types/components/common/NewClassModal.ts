@@ -1,11 +1,7 @@
 export interface NewClassModalStateType {
-    modal: boolean
-    page: 'category' | 'name' | 'profile'
-}
-
-export interface NewClassModalState {
-    groupName: string
-    introduceGroup: string
-    region: string
-    tags: string[]
+  modal: boolean
+  page: 'category' | 'name' | 'profile'
+  category: string[]
+  name: string
+  profile: any
 }
