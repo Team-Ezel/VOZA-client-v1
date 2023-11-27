@@ -13,13 +13,13 @@ export default function WriteBox() {
           <S.Title>게시글 작성</S.Title>
           <S.SubTitle>새로운 게시글을 올려보세요!</S.SubTitle>
         </S.TitleWrapper>
-        <Contents 
-        name={name}
-        setName={setName}
-        category={category}
-        setCategory={setCategory}
-        contents={contents}
-        setContents={setContents}
+        <Contents
+          name={name}
+          setName={setName}
+          category={category}
+          setCategory={setCategory}
+          contents={contents}
+          setContents={setContents}
         />
         <S.ButtonWrapper>
           <Button

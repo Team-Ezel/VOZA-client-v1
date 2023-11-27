@@ -1,5 +1,6 @@
 import { atom } from 'recoil'
 import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
+import { EditPostType } from '@/types/components/post/EditPostType'
 
 export const newClassModal = atom<NewClassModalStateType>({
   key: 'NewClassModal',
@@ -27,7 +28,15 @@ export const calenderModal = atom({
   default: false,
 })
 
-export const boardIdAtom = atom({
-  key: 'boardIdAtom',
+export const editStateAtom = atom({
+  key: 'editStateAtom',
   default: false,
+})
+
+export const editItemAtom = atom<EditPostType>({
+  key: 'editItemAtom',
+  default: {
+    title: '',
+    content: '',
+  },
 })
