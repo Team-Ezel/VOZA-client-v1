@@ -58,7 +58,10 @@ const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({ onClose }) => {
           background='#FF3120'
           color='#fff'
           border='none'
-          onClick={benMember}
+          onClick={() =>{
+            benMember()
+            onClose()
+          }}
         >
           탈퇴하기
         </Button>

@@ -52,7 +52,10 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
           background='#3355CD'
           color='#fff'
           border='none'
-          onClick={updateAdmin}
+          onClick={() => {
+            updateAdmin()
+            onclose
+          }}
         >
           권한부여
         </Button>
