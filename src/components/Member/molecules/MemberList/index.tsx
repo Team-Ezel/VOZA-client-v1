@@ -3,10 +3,14 @@ import * as S from './style'
 import MemberListItem from '../../atoms/Items/MemberListItem'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { Ben } from '@/assets/svgs'
+import LeaveGroupModal from '../../atoms/Modal/LeaveGroupModal'
+import GroupCodeModal from '../../atoms/Modal/GroupCodeModal'
 
 interface Member {
   name: string
   id: number
+  profileUrl: string
 }
 
 const MemberList: React.FC = () => {
@@ -14,6 +18,8 @@ const MemberList: React.FC = () => {
   const router = useRouter()
   const { id } = router.query
   const [memberList, setMemberList] = useState<Member[]>([])
+  const [isModalVisible, setModalVisible] = useState<boolean>(false)
+  const [isCodeModalVisible, setCodeModalVisible] = useState<Boolean>(false)
 
   const fetchData = async () => {
     try {
@@ -47,13 +53,37 @@ const MemberList: React.FC = () => {
   return (
     <S.MemberListContainer>
       <S.Title>멤버</S.Title>
+      <S.InviteText>
+        <span
+          onClick={() => {
+            setCodeModalVisible(true)
+          }}
+        >
+          멤버 초대하기
+        </span>
+      </S.InviteText>
       {memberList.map((member) => (
         <MemberListItem
           key={member.id}
           name={member.name}
           memberId={member.id}
+          profileURL={member.profileUrl}
         />
       ))}
+      <S.LeaveGroup
+        onClick={() => {
+          setModalVisible(true)
+        }}
+      >
+        <Ben /> 그룹탈퇴하기
+      </S.LeaveGroup>
+
+      {isModalVisible && (
+        <LeaveGroupModal onClose={() => setModalVisible(false)} />
+      )}
+      {isCodeModalVisible && (
+        <GroupCodeModal onClose={() => setCodeModalVisible(false)} />
+      )}
     </S.MemberListContainer>
   )
 }

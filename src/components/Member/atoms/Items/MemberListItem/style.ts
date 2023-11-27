@@ -1,3 +1,4 @@
+import { ProfileURLPropsType } from '@/types/components/common/ProfileURLPropsType'
 import styled from '@emotion/styled'
 
 export const MemberItemContainer = styled.div`
@@ -20,10 +21,14 @@ export const MemberProfile = styled.div`
   cursor: pointer;
 `
 
-export const MemeberProfileImg = styled.div`
+export const MemeberProfileImg = styled.div<ProfileURLPropsType>`
   width: 38px;
   height: 38px;
   border-radius: 50%;
+  background-image: url(${(props) => props.ProfileImgURL});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 export const MemberName = styled.span`

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import * as S from './style'
 import { TimeItemProps } from '@/types/components/Modal/TimeItemProps'
 
-const TimeItem = ({ time, isSelected, onItemClick }: TimeItemProps) => {
+const TimeItem = ({ time, isSelected, onItemClick , benTime }: TimeItemProps) => {
   const handleItemClick = () => {
-    onItemClick(time) // 부모 컴포넌트에 선택된 타임을 알립니다.
+    onItemClick(benTime) // 부모 컴포넌트에 선택된 타임을 알립니다.
   }
 
   return (

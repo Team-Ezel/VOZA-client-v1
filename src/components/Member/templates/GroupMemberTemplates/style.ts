@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 export const GroupMemberTemplates = styled.div`
   width: 100vw;
   height: 100vh;
-  padding-top: 40px;
   display: flex;
   justify-content: center;
 

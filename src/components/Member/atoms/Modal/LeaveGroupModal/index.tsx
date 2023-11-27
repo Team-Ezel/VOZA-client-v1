@@ -5,17 +5,16 @@ import { createPortal } from 'react-dom'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
-type AddAdminModalProps = {
-  memberId: number
+type LeaveGroupModalProps = {
   onClose: () => void
 }
 
-const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
+const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({ onClose }) => {
   const baseurl = process.env.NEXT_PUBLIC_BASEURL
   const router = useRouter()
   const { id } = router.query
 
-  const updateAdmin = async () => {
+  const benMember = async () => {
     try {
       const accessToken = localStorage.getItem('kakao-accessToken')
 
@@ -24,13 +23,21 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
         return
       }
 
-      await axios.patch(`${baseurl}/group/${id}/member/grant/${memberId}`, {
+      const response = await axios.delete(`${baseurl}/group/${id}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       })
-    } catch (error) {
-      console.error(error)
+
+      onClose()
+    } catch (error: any) {
+      if (error.response && error.response.status === 403) {
+        alert('해당 그룹의 리더이거나 그룹에 가입되어 있지 않습니다 ')
+        onClose()
+      } else {
+        console.error(error)
+        onClose()
+      }
     }
   }
 
@@ -39,25 +46,24 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
       onClose()
     }
   }
-
   return createPortal(
     <S.Main onClick={handleModalClick}>
       <S.ModalContainer>
-        <S.Title>관리자 권한 부여</S.Title>
-        <S.Subtitle>소모임에 대한 대부분의 권한이 생겨요!</S.Subtitle>
+        <S.Title>소모임 탈퇴하기</S.Title>
+        <S.Subtitle>정말로 소모임을 나가실건가요?</S.Subtitle>
         <Button
           width='21.1875rem'
           height='2.6875rem'
           borderRadius='0.3125rem'
-          background='#3355CD'
+          background='#FF3120'
           color='#fff'
           border='none'
-          onClick={() => {
-            updateAdmin()
-            onclose
+          onClick={() =>{
+            benMember()
+            onClose()
           }}
         >
-          권한부여
+          탈퇴하기
         </Button>
       </S.ModalContainer>
     </S.Main>,
@@ -65,4 +71,4 @@ const AddAdminModal: React.FC<AddAdminModalProps> = ({ memberId, onClose }) => {
   )
 }
 
-export default AddAdminModal
+export default LeaveGroupModal

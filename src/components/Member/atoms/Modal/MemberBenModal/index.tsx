@@ -28,7 +28,7 @@ const MemberBenModal: React.FC<MemberBenModalProps> = ({
       }
 
       await axios.delete(
-        `${baseurl}/group/${id}/member/${memberId}}?kickOutTime:ALL_DAY_STOP`,
+        `${baseurl}/group/${id}/member/${memberId}}?kickOutTime:PERMANENT_STOP`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -57,7 +57,10 @@ const MemberBenModal: React.FC<MemberBenModalProps> = ({
           background='#FF3120'
           color='#fff'
           border='none'
-          onClick={benMember}
+          onClick={() => {
+            benMember();
+            onClose()
+          }}
         >
           내보내기
         </Button>
