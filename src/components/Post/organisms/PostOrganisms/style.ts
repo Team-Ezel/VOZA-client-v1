@@ -33,3 +33,22 @@ export const ImgTitle = styled.div`
   font-size: 28px;
   font-weight: 700;
 `
+
+export const EditTab = styled.div`
+  margin-left: auto;
+  margin-top: 0.5em;
+
+  span {
+    color: #999999;
+    padding-left: 0.5em;
+    cursor: pointer;
+  }
+`
+
+export const EditArea = styled.textarea`
+  margin-top: 1.1em;
+  font-size: 20px;
+  resize: none;
+  height: auto;
+  height: 10em;
+`

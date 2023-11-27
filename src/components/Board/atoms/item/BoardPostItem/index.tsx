@@ -12,7 +12,7 @@ const BoardPostItem = (props: BoardPostType) => {
     <S.BoardPostItem>
       <div>
         <Link
-          href={`/board/${params}/post/${props.boardId}`}
+          href={`/group/${params}/post/${props.boardId}`}
           className='post-title'
         >
           {props.title}

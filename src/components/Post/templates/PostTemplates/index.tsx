@@ -22,12 +22,14 @@ const PostTemplates = () => {
   }, [id, postId])
 
   const getPost = async () => {
-    const _postContent: any = await API({
-      url: `/group/${id}/board/${postId}`,
-      method: 'get',
-    })
-    console.log(_postContent)
-    setPostContent(_postContent.data)
+    if (id != undefined && postId != undefined) {
+      const _postContent: any = await API({
+        url: `/group/${id}/board/${postId}`,
+        method: 'get',
+      })
+      console.log(_postContent)
+      setPostContent(_postContent.data)
+    }
   }
 
   return (

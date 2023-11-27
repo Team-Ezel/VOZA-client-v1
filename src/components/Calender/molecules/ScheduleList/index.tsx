@@ -5,7 +5,7 @@ import * as S from './style'
 import {
   ScheduleItemListTypes,
   ScheduleListPropsType,
-} from '@/types/components/Calender/ScheduleTypes'
+} from '@/types/components/common/Calender/ScheduleTypes'
 import useFetch from '@/hooks/useFetch'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'

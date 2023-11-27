@@ -1,4 +1,4 @@
-export type BoardPostType = {
+export type PostType = {
   boardId: number
   title: string
   boardType?: string

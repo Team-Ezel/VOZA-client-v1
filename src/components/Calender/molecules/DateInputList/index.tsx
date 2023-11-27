@@ -2,7 +2,7 @@ import * as S from './style'
 import * as I from '@/assets/svgs'
 import { useState, useEffect } from 'react'
 import DateInput from '../../atoms/DateInput'
-import { DateInputListPropsType } from '@/types/components/Calender/ScheduleTypes'
+import { DateInputListPropsType } from '@/types/components/common/Calender/ScheduleTypes'
 export default function DateInputList({
   startDate,
   setStartDate,
