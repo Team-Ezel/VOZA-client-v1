@@ -9,9 +9,7 @@ type LeaveGroupModalProps = {
   onClose: () => void
 }
 
-const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({
-  onClose,
-}) => {
+const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({ onClose }) => {
   const baseurl = process.env.NEXT_PUBLIC_BASEURL
   const router = useRouter()
   const { id } = router.query
@@ -25,13 +23,21 @@ const LeaveGroupModal: React.FC<LeaveGroupModalProps> = ({
         return
       }
 
-      await axios.delete(`${baseurl}/group/${id}`, {
+      const response = await axios.delete(`${baseurl}/group/${id}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       })
-    } catch (error) {
-      console.error(error)
+
+      onClose()
+    } catch (error: any) {
+      if (error.response && error.response.status === 403) {
+        alert('해당 그룹의 리더이거나 그룹에 가입되어 있지 않습니다 ')
+        onClose()
+      } else {
+        console.error(error)
+        onClose()
+      }
     }
   }
 
