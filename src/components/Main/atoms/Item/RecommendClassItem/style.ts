@@ -14,9 +14,10 @@ export const thumbnailWrapper = styled.div`
   border-radius: 15px;
   img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
   }
-  margin-right:1rem ;
+  margin-right: 1rem;
 `
 export const TitleWrapper = styled.label`
   font-size: 20px;
@@ -30,7 +31,7 @@ export const InformationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   p {
     margin: 0;
     color: #000000;
@@ -40,7 +41,6 @@ export const InformationWrapper = styled.div`
     word-break: normal;
     text-overflow: ellipsis;
     word-break: keep-all;
-    
   }
 `
 export const DetailClassButton = styled.div`
