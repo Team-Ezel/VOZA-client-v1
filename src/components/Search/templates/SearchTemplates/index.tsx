@@ -1,7 +1,7 @@
 import { BoardPostType } from '@/types/components/board/BoardPostType'
 import SearchOrganisms from '../../organisms/SearchOrganisms/index'
 import * as S from './style'
-import BoardPostItem from '@/components/Board/atoms/BoardPostItem'
+import BoardPostItem from '@/components/Board/atoms/item/BoardPostItem'
 import SearchPostlists from '../../molecules/SearchPostlists'
 
 const SearchTemplates = () => {

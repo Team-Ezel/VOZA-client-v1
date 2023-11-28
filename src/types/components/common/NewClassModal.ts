@@ -1,8 +1,7 @@
-export type NewClassModalStateType = {
-    modal:boolean
-    page:'category' | 'name' | 'profile'
-    category:string[]
-    name:string
-    profile:any
+export interface NewClassModalStateType {
+  modal: boolean
+  page: 'category' | 'name' | 'profile'
+  category: string[]
+  name: string
+  profile: any
 }
-

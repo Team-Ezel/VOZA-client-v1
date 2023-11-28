@@ -5,7 +5,6 @@ export const BoardInfo = styled.div`
   width: 300px;
 
   img {
-    background-color: red;
     width: 280px;
     height: 220px;
     border-radius: 10px;

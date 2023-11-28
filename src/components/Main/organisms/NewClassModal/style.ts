@@ -7,10 +7,10 @@ export const NewClassModalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(25, 25, 25, 0.3);
 `
 
 export const ModalInsideWrapper = styled.div`
+position: absolute;
   background-color: #fff;
   height: 500px;
   width: 400px;
@@ -26,4 +26,10 @@ export const SubTitleWrapper = styled.div`
 font-weight: 500;
 font-size: 16px;
 color: #656B80;
+`
+
+export const ModaloutsideWrapper = styled.div`
+width: 100%;
+height: 100%;
+background: rgba(25, 25, 25, 0.3);
 `

@@ -1,5 +1,5 @@
 export type BoardPostType = {
-  id: number
+  boardId: number
   title: string
   boardType?: string
   author: string

@@ -69,6 +69,7 @@ const MemberOptionModal = ({ memberId }: MemberOptionModalProps) => {
       )}
       {isMemberSuspensionModalOpen && (
         <MemberSuspensionModal
+          memberId={memberId}
           onClose={() => setMemberSuspensionModalOpen(false)}
         />
       )}
