@@ -1,4 +1,4 @@
-import { APIFORM } from '@/apis'
+import API from '@/apis'
 import { isAxiosError, Method } from 'axios'
 import { useCallback, useState } from 'react'
 
@@ -26,17 +26,20 @@ function useFetchFormdata<T>({
     async (body?: any) => {
       setIsLoading(true)
 
-      let formdata = new FormData()
-      formdata.append('file', body)
-
       try {
         // 변경된 부분: form-data 요청으로 수정
-        const { data } = await APIFORM({
+
+        const { data } = await API({
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
           url,
           method,
           data: body, // FormData 객체 전달
         })
+
         setData(data)
+
         if (successMessage) console.log(successMessage)
         if (onSuccess) await onSuccess(data)
       } catch (e) {
@@ -51,6 +54,7 @@ function useFetchFormdata<T>({
         ) {
           console.error(errorMessage[e.response.status])
         }
+
         if (onFailure) await onFailure(e)
       } finally {
         setIsLoading(false)
