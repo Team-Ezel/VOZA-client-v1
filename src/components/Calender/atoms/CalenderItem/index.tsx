@@ -1,4 +1,4 @@
-import { CalenderItemPropsTypes } from '@/types/components/common/Calender/CalenderType'
+import { CalenderItemPropsTypes } from '@/types/components/Calender/CalenderType'
 import * as S from './style'
 
 export default function CalenderItem({
