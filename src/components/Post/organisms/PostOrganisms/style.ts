@@ -20,6 +20,39 @@ export const PostOrganisms = styled.div`
     opacity: 60%;
     margin-left: -2.5%;
   }
+  .MarkDownContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    p {
+      font-size: 1.2rem;
+    }
+    h4 {
+      font-size: 1.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    img {
+      max-width: 100%;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-size: 1.2rem;
+    }
+  }
 `
 
 export const PostContent = styled.div`

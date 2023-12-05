@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import useFetch from '@/hooks/useFetch'
 import { useRecoilState } from 'recoil'
 import { editItemAtom, editStateAtom } from '@/atoms/atoms'
+import ReactMarkDown from 'react-markdown'
 import API from '@/apis'
 
 const PostOrganisms = (props: PostType) => {
@@ -85,7 +86,9 @@ const PostOrganisms = (props: PostType) => {
           />
         </>
       ) : (
-        <S.PostContent>{props.content}</S.PostContent>
+        <ReactMarkDown className='MarkDownContent'>
+          {props.content}
+        </ReactMarkDown>
       )}
     </S.PostOrganisms>
   )
