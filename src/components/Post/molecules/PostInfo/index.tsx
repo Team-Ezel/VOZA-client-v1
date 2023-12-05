@@ -9,7 +9,7 @@ const PostInfo = (props: PostType) => {
   const editState = useRecoilValue<boolean>(editStateAtom)
 
   useEffect(() => {
-    setEditContent({ title: props.title, content: props.content })
+    setEditContent({ title: props.title, content:props.content })
     console.log(props)
   }, [])
 
