@@ -1,4 +1,4 @@
-import { CalenderMonthPropsTypes } from '@/types/components/common/Calender/CalenderType'
+import { CalenderMonthPropsTypes } from '@/types/components/Calender/CalenderType'
 import * as S from './style'
 import * as I from '@/assets/svgs'
 

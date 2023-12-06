@@ -2,7 +2,7 @@
 import PostInfo from '../../molecules/PostInfo'
 import * as S from './style'
 import { PostType } from '@/types/components/post/PostType'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Button } from '@/components/Common/atoms/Button/Button/style'
 import { useRouter } from 'next/router'
 import useFetch from '@/hooks/useFetch'

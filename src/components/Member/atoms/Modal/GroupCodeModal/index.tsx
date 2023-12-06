@@ -16,7 +16,7 @@ const GroupCodeModal: React.FC<GroupCodeModalProps> = ({ onClose }) => {
   const { id } = router.query
 
   // Use a more specific type for data
-  const { isLoading, fetch, data } = useFetch<{ data: string }>({
+  const { isLoading, fetch, data } = useFetch<string | null>({
     url: `${baseurl}/group/${id}`,
     method: 'POST',
   })
@@ -29,9 +29,11 @@ const GroupCodeModal: React.FC<GroupCodeModalProps> = ({ onClose }) => {
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(data)
-      // Optional: Add a feedback message or some UI update after successful copy
-      alert('초대코드가 클립보드에 복사되었습니다.')
+      if (data !== null) {
+        await navigator.clipboard.writeText(data)
+        // Optional: Add a feedback message or some UI update after successful copy
+        alert('초대코드가 클립보드에 복사되었습니다.')
+      }
     } catch (error) {
       console.error('클립보드 복사 실패:', error)
       // Optional: Display an error message to the user

@@ -7,6 +7,7 @@ export const BoardInfo = styled.div`
   img {
     width: 280px;
     height: 220px;
+    object-fit: cover;
     border-radius: 10px;
   }
 

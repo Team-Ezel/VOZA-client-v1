@@ -10,12 +10,12 @@ export default function WriteBox() {
   const [category, setCategory] = useState('NORMAL')
   const [contents, setContents] = useState('')
   const router = useRouter()
-  const { fetch, data, isLoading } = useFetch({
+  const { fetch, isLoading } = useFetch({
     url: `group/${router.query.id}/board`,
-    method: "POST",
+    method: 'POST',
     onSuccess: () => {
       router.push(`/group/${router.query.id}`)
-    }
+    },
   })
 
   const WriteUpload = () => {
@@ -23,7 +23,7 @@ export default function WriteBox() {
       fetch({
         title: name,
         content: contents,
-        boardType: category
+        boardType: category,
       })
     }
   }
@@ -54,7 +54,9 @@ export default function WriteBox() {
             border='0'
             borderRadius='5px'
             onClick={() => WriteUpload()}
-          >등록하기</Button>
+          >
+            등록하기
+          </Button>
         </S.ButtonWrapper>
       </S.WriteBoxWrapper>
     </S.background>

@@ -1,4 +1,4 @@
-import { ScheduleItemPropsTypes } from '@/types/components/common/Calender/ScheduleTypes'
+import { ScheduleItemPropsTypes } from '@/types/components/Calender/ScheduleTypes'
 import * as S from './style'
 import * as I from '@/assets/svgs'
 
