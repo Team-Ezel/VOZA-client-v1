@@ -3,7 +3,7 @@ import { newClassModal } from '@/atoms/atoms'
 import * as S from './style'
 import { useState } from 'react'
 import NewClassModalSelect from '../../molecules/NewClassModalSelect'
-import { NewClassModalStateType } from 'Category/NewClassModal'
+import { NewClassModalStateType } from '@/types/components/common/NewClassModal'
 function NewClassModal() {
   const [NewClassModalState, setNewClassModalState] =
     useRecoilState<NewClassModalStateType>(newClassModal)
