@@ -43,7 +43,7 @@ const Header = () => {
     <>
       <S.HeaderWrapper>
         <div className='block'>
-          <Link href={'/'}>
+          <Link href={'/main'}>
             <S.VozaLogo>
               <Logo />
             </S.VozaLogo>
