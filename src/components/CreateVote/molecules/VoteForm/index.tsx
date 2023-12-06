@@ -61,6 +61,8 @@ const VoteForm = () => {
           options: [...options, ...extraOptions],
         },
       })
+
+      router.replace(`/group/${router.query.id}`);
       
     } catch (error) {
       console.log(error)
