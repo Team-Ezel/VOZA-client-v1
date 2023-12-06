@@ -8,12 +8,14 @@ import { toast } from 'react-toastify'
 
 export default function Toolbar({ contents, setContents }: ToolbarPropsType) {
   const imgRef = useRef<HTMLInputElement | null>(null)
-  const { fetch, isLoading, data } = useFetchFormdata({
+  const { fetch, isLoading, data } = useFetchFormdata<{ awsUrl: string }>({
     url: '/file',
     method: 'POST',
     onSuccess: () => {
       toast.success('이미지 업로드 성공')
-      setContents(contents + `![image](${data.awsUrl})`)
+      if (data) {
+        setContents(contents + `![image](${data.awsUrl})`)
+      }
     },
     onFailure: () => {
       toast.error('이미지 업로드 실패')
