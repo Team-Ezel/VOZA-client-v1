@@ -5,7 +5,7 @@ import buildCalendar from '@/utils/buildCalender'
 import CalenderList from '../../molecules/CalenderList'
 import CalenderWeekList from '../../atoms/CalenderWeek'
 import CalenderMonth from '../../molecules/CalenderChange'
-import { CalenderBoxPropsType } from '@/types/components/common/Calender/CalenderType'
+import { CalenderBoxPropsType } from '@/types/components/Calender/CalenderType'
 
 export default function CalenderBox({ day, setDay }: CalenderBoxPropsType) {
   const [date, setdate] = useState<moment.Moment>(() => moment())

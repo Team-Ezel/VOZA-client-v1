@@ -1,4 +1,4 @@
-import { CalenderListPropsTypes } from '@/types/components/common/Calender/CalenderType'
+import { CalenderListPropsTypes } from '@/types/components/Calender/CalenderType'
 import CalenderItem from '../../atoms/CalenderItem'
 import { Moment } from 'moment'
 import * as S from './style'

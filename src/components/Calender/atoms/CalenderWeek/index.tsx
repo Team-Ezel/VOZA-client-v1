@@ -1,4 +1,3 @@
-import { CalenderWeekListPropsTypes } from '@/types/components/common/Calender/CalenderType'
 import * as S from './style'
 import { CalenderWeekListData } from '@/assets/data/CalenderWeekListData'
 export default function CalenderWeekList() {

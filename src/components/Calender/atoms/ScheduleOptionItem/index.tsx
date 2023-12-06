@@ -1,4 +1,4 @@
-import { ScheduleOptionItemPropsType } from '@/types/components/common/Calender/ScheduleTypes'
+import { ScheduleOptionItemPropsType } from '@/types/components/Calender/ScheduleTypes'
 import * as S from './style'
 
 export default function ScheduleOptionItem({
