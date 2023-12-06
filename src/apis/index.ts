@@ -6,6 +6,13 @@ const API = axios.create({
   withCredentials: true,
 })
 
+export const APIFORM = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_BASEURL,
+  headers: {
+    "Content-Type": "multipart/form-data"
+  }
+})
+
 API.interceptors.request.use(async (config) => {
   const tokenManager = new TokenManager()
 

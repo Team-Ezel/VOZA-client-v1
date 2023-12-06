@@ -2,10 +2,32 @@ import Button from '@/components/Common/atoms/Button/Button'
 import Contents from '../../molecules/Contents'
 import { useState } from 'react'
 import * as S from './style'
+import useFetch from '@/hooks/useFetch'
+import { useRouter } from 'next/router'
+
 export default function WriteBox() {
   const [name, setName] = useState<string>('')
   const [category, setCategory] = useState('NORMAL')
   const [contents, setContents] = useState('')
+  const router = useRouter()
+  const { fetch, data, isLoading } = useFetch({
+    url: `group/${router.query.id}/board`,
+    method: "POST",
+    onSuccess: () => {
+      router.push(`/group/${router.query.id}`)
+    }
+  })
+
+  const WriteUpload = () => {
+    if (!isLoading) {
+      fetch({
+        title: name,
+        content: contents,
+        boardType: category
+      })
+    }
+  }
+
   return (
     <S.background>
       <S.WriteBoxWrapper>
@@ -23,7 +45,6 @@ export default function WriteBox() {
         />
         <S.ButtonWrapper>
           <Button
-            children='등록하기'
             width='120px'
             height='38px'
             color='#fff'
@@ -32,8 +53,8 @@ export default function WriteBox() {
             fontWeight='400'
             border='0'
             borderRadius='5px'
-            onClick={() => {}}
-          />
+            onClick={() => WriteUpload()}
+          >등록하기</Button>
         </S.ButtonWrapper>
       </S.WriteBoxWrapper>
     </S.background>
