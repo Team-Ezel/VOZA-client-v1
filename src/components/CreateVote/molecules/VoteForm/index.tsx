@@ -61,11 +61,9 @@ const VoteForm = () => {
           options: [...options, ...extraOptions],
         },
       })
-      
     } catch (error) {
       console.log(error)
     }
-
   }
 
   return (
@@ -95,7 +93,7 @@ const VoteForm = () => {
               key={index}
               PlaceholderText='옵션을 입력하세요'
               onRemove={() => removeExtraOption(index)}
-              onChange={(e) => handleExtraOptionChange(index)}
+              onChange={() => handleExtraOptionChange(index)}
             />
           ))}
           {extraOptions.length < 2 && (

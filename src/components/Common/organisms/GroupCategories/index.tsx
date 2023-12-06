@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './style'
-import { Category } from '@/types/components/groupcategories/category'
+import { Category } from '@/types/components/groupcategories/Category'
 import { useRouter } from 'next/router'
 
 const categories: Category[] = [

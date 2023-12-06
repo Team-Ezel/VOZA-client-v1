@@ -7,9 +7,18 @@ export const contentsWrapper = styled.div`
   justify-content: flex-start;
   gap: 15px;
 `
+
+
 export const contentWrapper = styled.div`
   display: flex;
 `
+
+export const OptionWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+`
+
 export const NameWrapper = styled.div`
   color: #656b80;
   font-size: 16px;

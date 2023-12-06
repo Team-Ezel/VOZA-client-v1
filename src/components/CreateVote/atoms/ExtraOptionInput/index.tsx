@@ -5,6 +5,7 @@ import { Cross } from '@/assets/svgs'
 type ExtraOptionInputProps = {
   PlaceholderText: string
   onRemove: () => void
+  onChange: () => void
 }
 
 const ExtraOptionInput = ({

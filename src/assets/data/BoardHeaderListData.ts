@@ -5,10 +5,10 @@ export const BoardHeaderListData = [
   },
   {
     name: '일정',
-    value: '/',
+    value: '/calender',
   },
   {
     name: '멤버',
-    value: '/',
+    value: '/member',
   },
 ]

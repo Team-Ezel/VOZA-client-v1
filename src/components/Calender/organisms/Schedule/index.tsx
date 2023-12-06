@@ -1,4 +1,4 @@
-import { SchedulePropsType } from '@/types/components/common/Calender/ScheduleTypes'
+import { SchedulePropsType } from '@/types/components/Calender/ScheduleTypes'
 import CalenderChange from '../../molecules/CalenderChange'
 import ScheduleList from '../../molecules/ScheduleList'
 import * as S from './style'
