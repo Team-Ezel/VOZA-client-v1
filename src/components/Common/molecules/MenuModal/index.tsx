@@ -1,6 +1,8 @@
 import React from 'react'
 import * as S from './style'
 import Link from 'next/link'
+import TokenManager from '@/apis/TokenManager'
+import { useRouter } from 'next/router'
 
 interface MenuModalPropsType {
   joinCode: boolean
@@ -18,6 +20,13 @@ const MenuModal = ({
     setMenuClicked(false)
   }
 
+  const router = useRouter()
+  const logout = () => {
+    const tokenManager = new TokenManager()
+    tokenManager.removeTokens()
+    router.replace('')
+  }
+
   return (
     <S.MenuModalWrapper>
       <Link href={'/'}>
@@ -30,9 +39,9 @@ const MenuModal = ({
         <p>친구초대</p>
       </Link>
       <p onClick={joinGroup}>그룹가입</p>
-      <Link href={'/'}>
+      <div onClick={logout}>
         <p>로그아웃</p>
-      </Link>
+      </div>
     </S.MenuModalWrapper>
   )
 }
