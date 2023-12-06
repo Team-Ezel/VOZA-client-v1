@@ -1,6 +1,5 @@
 import { CalenderItemPropsTypes } from '@/types/components/Calender/CalenderType'
 import * as S from './style'
-
 export default function CalenderItem({
   data,
   onClick,

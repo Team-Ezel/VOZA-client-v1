@@ -11,14 +11,9 @@ interface BoardHeaderItem {
 const BoardHeaderItem = ({ name, value }: BoardHeaderItem) => {
   const path = useRouter().asPath
   const color: string = value === path ? '#3355cd' : '#000'
-
-  useEffect(() => {
-    console.log(path, color)
-  })
-
   return (
     <S.BoardHeaderItem textColor={color}>
-      <Link href={value}>{name}</Link>
+      <Link href={path + value}>{name}</Link>
     </S.BoardHeaderItem>
   )
 }

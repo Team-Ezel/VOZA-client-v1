@@ -10,7 +10,7 @@ export default function WriteBox() {
   const [category, setCategory] = useState('NORMAL')
   const [contents, setContents] = useState('')
   const router = useRouter()
-  const { fetch, data, isLoading } = useFetch({
+  const { fetch, isLoading } = useFetch({
     url: `group/${router.query.id}/board`,
     method: 'POST',
     onSuccess: () => {
