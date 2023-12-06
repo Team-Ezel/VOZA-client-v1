@@ -3,21 +3,18 @@ import styled from '@emotion/styled'
 export const background = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
   background-color: #f7f8fa;
   display: flex;
   justify-content: center;
 `
 
 export const WriteBoxWrapper = styled.div`
-  padding-top: 24px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 24px 40px;
   border-radius: 10px;
   margin-top: 12vh;
   background-color: #fff;
   width: 700px;
-  height: 550px;
+  height: fit-content;
 `
 export const Title = styled.p`
   color: #000;
