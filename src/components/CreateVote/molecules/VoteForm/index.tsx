@@ -61,6 +61,8 @@ const VoteForm = () => {
           options: [...options, ...extraOptions],
         },
       })
+
+      router.replace(`/group/${router.query.id}`)
     } catch (error) {
       console.log(error)
     }
@@ -93,7 +95,7 @@ const VoteForm = () => {
               key={index}
               PlaceholderText='옵션을 입력하세요'
               onRemove={() => removeExtraOption(index)}
-              onChange={() => handleExtraOptionChange(index)}
+              onChange={(e) => handleExtraOptionChange(index)(e)}
             />
           ))}
           {extraOptions.length < 2 && (
