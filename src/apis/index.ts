@@ -34,7 +34,7 @@ API.interceptors.request.use(async (config) => {
     )
   ) {
     tokenManager.initToken()
-    //reIssueToken(tokenManager.refreshToken)
+    reIssueToken(tokenManager.refreshToken)
   } else if (
     !tokenManager.validateToken(
       tokenManager.accessExp,
