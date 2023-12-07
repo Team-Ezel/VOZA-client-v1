@@ -5,14 +5,16 @@ import { useRouter } from 'next/router'
 
 const BoardPostItem = (props: BoardPostType) => {
   const params = useRouter().query.id
-  console.log(props.boardType)
   const createdDate = props.createdDate.substring(0, 10)
+
+  const postLink = `/group/${params}/post/${props.boardId}`
+  const voteLink = `/group/${params}/vote/${props.id}`
 
   return (
     <S.BoardPostItem>
       <div>
         <Link
-          href={`/group/${params}/post/${props.boardId}`}
+          href={props.boardId === undefined ? voteLink : postLink}
           className='post-title'
         >
           {props.title}

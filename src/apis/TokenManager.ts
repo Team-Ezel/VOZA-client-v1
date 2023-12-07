@@ -3,7 +3,7 @@ import { accessToken, refreshToken, accessExp, refreshExp } from '@/lib/token'
 export interface TokensType {
   accessToken: string
   refreshToken: string
-  AccessExpiredAt: string
+  accessExpiredAt: string
   refreshExpiredAt: string
 }
 
@@ -41,12 +41,12 @@ export class TokenManager {
   setTokens(tokens: TokensType) {
     this._accessToken = tokens.accessToken
     this._refreshToken = tokens.refreshToken
-    this._accessExp = tokens.AccessExpiredAt
+    this._accessExp = tokens.accessExpiredAt
     this._refreshExp = tokens.refreshExpiredAt
 
     localStorage.setItem(accessToken, tokens.accessToken)
     localStorage.setItem(refreshToken, tokens.refreshToken)
-    localStorage.setItem(accessExp, tokens.AccessExpiredAt)
+    localStorage.setItem(accessExp, tokens.accessExpiredAt)
     localStorage.setItem(refreshExp, tokens.refreshExpiredAt)
   }
 

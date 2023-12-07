@@ -5,7 +5,7 @@ export const PostList = styled.div`
   font-size: 24px;
   display: flex;
   flex-wrap: wrap;
-  height: 620px;
+  max-height: 620px;
 `
 export const ListType = styled.div`
   width: 100%;
@@ -20,9 +20,10 @@ export const NoPostFlex = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10em;
   margin-left: 50%;
   transform: translate(-50%, 0);
+  margin-top: 3em;
+  margin-bottom: 3em;
 `
 
 export const NoPostTitle = styled.div`
