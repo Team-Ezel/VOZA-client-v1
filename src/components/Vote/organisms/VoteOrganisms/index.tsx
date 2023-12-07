@@ -1,52 +1,63 @@
-import React, { useState, useEffect } from 'react';
-import * as S from './style';
-import { useRouter } from 'next/router';
-import API from '@/apis';
-import { VoteType } from '@/types/components/Vote/VoteType';
-import VoteInfo from '../../molecules/VoteInfo';
-import VoteBar from '../../atoms/VoteBar';
-import Button from '@/components/Common/atoms/Button/Button';
+import React, { useState, useEffect } from 'react'
+import * as S from './style'
+import { useRouter } from 'next/router'
+import API from '@/apis'
+import { VoteType } from '@/types/components/Vote/VoteType'
+import VoteInfo from '../../molecules/VoteInfo'
+import VoteBar from '../../atoms/VoteBar'
+import Button from '@/components/Common/atoms/Button/Button'
 
 const VoteOrganisms = (props: VoteType) => {
-  const router = useRouter();
-  const [selectedBarId, setSelectedBarId] = useState<number | null>(null);
-  const [totalVoteCount, setTotalVoteCount] = useState<number>(0);
+  const router = useRouter()
+  const [selectedBarId, setSelectedBarId] = useState<number | null>(null)
+  const [totalVoteCount, setTotalVoteCount] = useState<number>(0)
 
   useEffect(() => {
     // voteOptions의 count 합 계산
-    const totalCount = props.voteOptions.reduce((acc, option) => acc + option.count, 0);
-    setTotalVoteCount(totalCount);
-  }, [props.voteOptions]);
+    const totalCount = props.voteOptions.reduce(
+      (acc, option) => acc + option.count,
+      0,
+    )
+    setTotalVoteCount(totalCount)
+  }, [props.voteOptions])
 
   const delOnClick = () => {
-    const confState = confirm('정말 삭제하시겠습니까?');
+    const confState = confirm('정말 삭제하시겠습니까?')
     if (confState === true) {
       API({
         method: 'DELETE',
         url: `/group/${router.query.id}/vote/${router.query.voteId}`,
-      });
-      router.replace(`/group/${router.query.id}`);
+      })
+      router.replace(`/group/${router.query.id}`)
     }
-  };
+  }
 
-  const vote = () => {
+  const vote = async () => {
     if (selectedBarId == null) {
-      alert('아무것도 선택되지 않았습니다.');
-      return;
+      alert('아무것도 선택되지 않았습니다.')
+      return
     }
-    const confState = confirm('투표하시겠습니까?');
-    if (confState === true) {
-      API({
-        method: 'PATCH',
-        url: `/group/${router.query.id}/vote/${router.query.voteId}/${selectedBarId}`,
-      });
-      // router.reload();
-    }
-  };
 
+    const confState = confirm('투표하시겠습니까?')
+    if (confState === true) {
+      try {
+        const response = await API({
+          method: 'PATCH',
+          url: `/group/${router.query.id}/vote/${router.query.voteId}/${selectedBarId}`,
+        })
+
+        if (response.status === 200) {
+          router.reload()
+        }
+      } catch (error) {
+        alert('이미 투표를 진행한적이 있습니다.')
+        router.reload()
+      }
+    }
+  }
   const handleBarSelect = (id: number) => {
-    setSelectedBarId(id === selectedBarId ? null : id);
-  };
+    setSelectedBarId(id === selectedBarId ? null : id)
+  }
 
   return (
     <S.PostOrganisms>
@@ -80,7 +91,7 @@ const VoteOrganisms = (props: VoteType) => {
         </Button>
       </S.PostContent>
     </S.PostOrganisms>
-  );
-};
+  )
+}
 
-export default VoteOrganisms;
+export default VoteOrganisms

@@ -29,7 +29,7 @@ const VoteBar: React.FC<VoteBarProps> = ({
     <S.VoteBar onClick={() => onSelect(id)}>
       <S.Detail>
         <span>{content}</span> &nbsp;
-        {selected && <Checked />} &nbsp;&nbsp; {count}
+        {selected && <Checked />} &nbsp;&nbsp; {selected ? count + 1 : count}
       </S.Detail>
       <S.VoteColorBar selected={selected} ratio={ratio}></S.VoteColorBar>
     </S.VoteBar>
