@@ -6,11 +6,16 @@ import { VoteType } from '@/types/components/Vote/VoteType'
 import VoteInfo from '../../molecules/VoteInfo'
 import VoteBar from '../../atoms/VoteBar'
 import Button from '@/components/Common/atoms/Button/Button'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const VoteOrganisms = (props: VoteType) => {
   const router = useRouter()
   const [selectedBarId, setSelectedBarId] = useState<number | null>(null)
   const [totalVoteCount, setTotalVoteCount] = useState<number>(0)
+
+  const error = () => toast.error('아무것도 선택되지 않았습니다.')
+  const voteError = () => toast.error('이미 투표를 진행한적이 있습니다')
 
   useEffect(() => {
     // voteOptions의 count 합 계산
@@ -34,7 +39,7 @@ const VoteOrganisms = (props: VoteType) => {
 
   const vote = async () => {
     if (selectedBarId == null) {
-      alert('아무것도 선택되지 않았습니다.')
+      error()
       return
     }
 
@@ -50,8 +55,7 @@ const VoteOrganisms = (props: VoteType) => {
           router.reload()
         }
       } catch (error) {
-        alert('이미 투표를 진행한적이 있습니다.')
-        router.reload()
+        voteError()
       }
     }
   }
@@ -61,6 +65,9 @@ const VoteOrganisms = (props: VoteType) => {
 
   return (
     <S.PostOrganisms>
+      <ToastContainer
+        limit={1}
+      />
       <VoteInfo {...props} />
       <hr />
       <S.EditTab>
@@ -75,7 +82,11 @@ const VoteOrganisms = (props: VoteType) => {
             id={item.id}
             selected={item.id === selectedBarId}
             onSelect={handleBarSelect}
-            totalVoteCount={ item.id !== selectedBarId && selectedBarId === null ? totalVoteCount  : totalVoteCount + 1}
+            totalVoteCount={
+              item.id !== selectedBarId && selectedBarId === null
+                ? totalVoteCount
+                : totalVoteCount + 1
+            }
           />
         ))}
         <Button
