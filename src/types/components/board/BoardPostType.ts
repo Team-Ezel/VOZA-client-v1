@@ -4,4 +4,5 @@ export type BoardPostType = {
   boardType?: string
   author: string
   createdDate: string
+  id?: number
 }
