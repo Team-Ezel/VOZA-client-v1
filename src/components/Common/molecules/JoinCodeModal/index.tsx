@@ -30,14 +30,17 @@ export default function JoinCodeModal({
     }
   }
   return (
-    <S.JoinCodeModalWrapper>
-      <S.Title>초대코드로 그룹가입</S.Title>
-      <form onSubmit={handleSubmit}>
-        <S.JoinCodeInput
-          value={joinCode}
-          onChange={(e) => setJoinCode(e.target.value)}
-        />
-      </form>
-    </S.JoinCodeModalWrapper>
+    <>
+      <S.backGroundModal onClick={() => setCodeClicked(false)} />
+      <S.JoinCodeModalWrapper>
+        <S.Title>초대코드로 그룹가입</S.Title>
+        <form onSubmit={handleSubmit}>
+          <S.JoinCodeInput
+            value={joinCode}
+            onChange={(e) => setJoinCode(e.target.value)}
+          />
+        </form>
+      </S.JoinCodeModalWrapper>
+    </>
   )
 }

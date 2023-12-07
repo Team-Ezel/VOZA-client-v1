@@ -31,3 +31,10 @@ export const JoinCodeInput = styled.input`
   height: 40px;
   border-radius: 3px;
 `
+export const backGroundModal = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+`
