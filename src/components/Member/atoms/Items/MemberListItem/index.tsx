@@ -8,12 +8,14 @@ type MemberListItemProps = {
   name: string
   memberId: number
   profileURL: string
+  isLeader: Boolean
 }
 
 const MemberListItem = ({
   name,
   memberId,
   profileURL,
+  isLeader,
 }: MemberListItemProps) => {
   const [isModalVisible, setModalVisible] = useState(false)
   const [isProfileModalVisible, setProfileModalVisible] = useState(false)
@@ -33,9 +35,7 @@ const MemberListItem = ({
         <S.MemberName>{name}</S.MemberName>
       </S.MemberProfile>
       <S.MemberSetting>
-        <div onClick={toggleModal}>
-          <Settings />
-        </div>
+        <div onClick={toggleModal}>{isLeader ? <Settings /> : null}</div>
         {isModalVisible && <MemberOptionModal memberId={memberId} />}
       </S.MemberSetting>
       {isProfileModalVisible && (

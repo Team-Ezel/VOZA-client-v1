@@ -20,6 +20,7 @@ const MemberList: React.FC = () => {
   const [memberList, setMemberList] = useState<Member[]>([])
   const [isModalVisible, setModalVisible] = useState<boolean>(false)
   const [isCodeModalVisible, setCodeModalVisible] = useState<Boolean>(false)
+  const [isLeader, setIsLeader] = useState<Boolean>(false)
 
   const fetchData = async () => {
     try {
@@ -30,15 +31,16 @@ const MemberList: React.FC = () => {
         return
       }
 
-      const response = await axios.get<{ memberResponses: Member[] }>(
-        `${baseurl}/group/${id}/member`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+      const response = await axios.get<{
+        memberResponses: Member[]
+        leaderCheck: boolean
+      }>(`${baseurl}/group/${id}/member`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
         },
-      )
+      })
       setMemberList(response.data.memberResponses)
+      setIsLeader(response.data.leaderCheck)
     } catch (error) {
       console.error(error)
     }
@@ -68,6 +70,7 @@ const MemberList: React.FC = () => {
           name={member.name}
           memberId={member.id}
           profileURL={member.profileUrl}
+          isLeader={isLeader}
         />
       ))}
       <S.LeaveGroup
