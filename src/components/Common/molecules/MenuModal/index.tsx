@@ -29,15 +29,6 @@ const MenuModal = ({
 
   return (
     <S.MenuModalWrapper>
-      <Link href={'/'}>
-        <p>마이페이지</p>
-      </Link>
-      <Link href={'/'}>
-        <p>친구추가</p>
-      </Link>
-      <Link href={'/'}>
-        <p>친구초대</p>
-      </Link>
       <p onClick={joinGroup}>그룹가입</p>
       <div onClick={logout}>
         <p>로그아웃</p>
