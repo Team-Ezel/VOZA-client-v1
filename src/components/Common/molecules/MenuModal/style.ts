@@ -5,7 +5,6 @@ export const MenuModalWrapper = styled.div`
   margin-top: 55px;
   padding: 10px;
   width: 120px;
-  height: 100px;
   border-radius: 0.75rem;
   background: #fff;
   filter: drop-shadow(0px 4px 6px rgba(154, 154, 154, 0.25));
