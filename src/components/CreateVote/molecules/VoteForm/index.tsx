@@ -97,8 +97,8 @@ const VoteForm = () => {
               key={index}
               PlaceholderText='옵션을 입력하세요'
               onRemove={() => removeExtraOption(index)}
-              onChange={(e) => handleExtraOptionChange(index)}
-            />
+              onChange={(e) => handleExtraOptionChange(index)(e)}
+              />
           ))}
           {extraOptions.length < 2 && (
             <Button
