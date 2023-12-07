@@ -55,15 +55,20 @@ const MemberList: React.FC = () => {
   return (
     <S.MemberListContainer>
       <S.Title>멤버</S.Title>
-      <S.InviteText>
-        <span
-          onClick={() => {
-            setCodeModalVisible(true)
-          }}
-        >
-          멤버 초대하기
-        </span>
-      </S.InviteText>
+      {isLeader ? (
+        <S.InviteText>
+          <span
+            onClick={() => {
+              setCodeModalVisible(true)
+            }}
+          >
+            멤버 초대하기
+          </span>
+        </S.InviteText>
+      ) : (
+        <></>
+      )}
+
       {memberList.map((member) => (
         <MemberListItem
           key={member.id}
@@ -73,13 +78,17 @@ const MemberList: React.FC = () => {
           isLeader={isLeader}
         />
       ))}
-      <S.LeaveGroup
-        onClick={() => {
-          setModalVisible(true)
-        }}
-      >
-        <Ben /> 그룹탈퇴하기
-      </S.LeaveGroup>
+      {isLeader ? (
+        <></>
+      ) : (
+        <S.LeaveGroup
+          onClick={() => {
+            setModalVisible(true)
+          }}
+        >
+          <Ben /> 그룹탈퇴하기
+        </S.LeaveGroup>
+      )}
 
       {isModalVisible && (
         <LeaveGroupModal onClose={() => setModalVisible(false)} />
