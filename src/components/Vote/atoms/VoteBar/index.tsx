@@ -22,7 +22,7 @@ const VoteBar: React.FC<VoteBarProps> = ({
   const ratio =
     totalVoteCount > 0
       ? (selected ? count + 1 : count) /
-        (selected ? totalVoteCount + 1 : totalVoteCount)
+        (selected ? totalVoteCount  : totalVoteCount)
       : 0
 
   return (

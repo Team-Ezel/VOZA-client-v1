@@ -75,7 +75,7 @@ const VoteOrganisms = (props: VoteType) => {
             id={item.id}
             selected={item.id === selectedBarId}
             onSelect={handleBarSelect}
-            totalVoteCount={totalVoteCount}
+            totalVoteCount={ item.id !== selectedBarId && selectedBarId === null ? totalVoteCount  : totalVoteCount + 1}
           />
         ))}
         <Button
