@@ -28,7 +28,6 @@ const VoteTemplates = () => {
           url: `/group/${id}/vote/${voteId}`,
           method: 'get',
         })
-        console.log(response.data)
         setVoteContent(response.data)
       } catch (error) {
         console.error('Error fetching post:', error)
