@@ -7,7 +7,6 @@ type ExtraOptionInputProps = {
   onRemove: () => void
   onChange: () => void
 }
-
 const ExtraOptionInput = ({
   PlaceholderText,
   onRemove,

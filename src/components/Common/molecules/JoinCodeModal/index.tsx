@@ -1,7 +1,8 @@
 import useFetch from '@/hooks/useFetch'
 import * as S from './style'
 import { useState } from 'react'
-
+import { toast } from 'react-toastify'
+import toastOption from '@/lib/toastOptions'
 interface JoinCodeModalPropsType {
   setCodeClicked: React.Dispatch<React.SetStateAction<boolean>>
   data: {
@@ -17,8 +18,14 @@ export default function JoinCodeModal({
 }: JoinCodeModalPropsType) {
   const [joinCode, setJoinCode] = useState('')
   const { fetch } = useFetch({
-    url: `email`,
+    url: `/group/ener/security`,
     method: 'POST',
+    onSuccess: () => {
+      toast.success('그룹가입에 성공했습니다')
+    },
+    onFailure: (e) => {
+      toast.error('오류가 발생했습니다')
+    },
   })
   const handleSubmit = () => {
     if (!isLoading && data) {
@@ -28,7 +35,9 @@ export default function JoinCodeModal({
       })
       setCodeClicked(false)
     }
+    toast.success('dd')
   }
+
   return (
     <>
       <S.backGroundModal onClick={() => setCodeClicked(false)} />
